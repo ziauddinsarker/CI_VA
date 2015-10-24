@@ -81,7 +81,7 @@ class Home_model extends CI_Model
 	
 	//Get Doctors Category without Counting the Doctors
 	public function getDoctorsCategoryOnly($limit = 22, $offset = 0){
-	  $this->db->select("doctor_category_id,doctor_category_name");
+	  $this->db->select("doctor_category_id,doctor_category_name,doctor_category_description");
 	  //$this->db->from('doctors_category');
 	  $this->db->order_by('doctor_category_name','ASC');
 	  //$query = $this->db->get();	  

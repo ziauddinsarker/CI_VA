@@ -1,12 +1,12 @@
 <div role="tabpanel" class="tab-pane" id="doctor">
     <article id="doctor-tab">
-        <h4>Doctors By Category</h4>
+        <h4>Doctor's Categories</h4>
         <div class="row">
             <div class="col-md-6">
 
 				<ul>
 					<?php foreach($doctors_category_22_1 as $category){?>
-						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><?php echo $category->doctor_category_name;?></a></li>
+						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
 					<?php }?>
 				</ul>
             </div>
@@ -14,7 +14,7 @@
             <div class="col-md-6">
 				<ul>
 					<?php foreach($doctors_category_22_2 as $category){?>
-						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><?php echo $category->doctor_category_name;?></a></li>
+						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
 					<?php }?>
 				</ul>
 				<?php /*
@@ -32,6 +32,10 @@
         </div>
 
     </article>
+
+
+
+
 
 				
 				<?php /*

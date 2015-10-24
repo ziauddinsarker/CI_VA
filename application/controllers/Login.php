@@ -9,7 +9,7 @@ class Login extends CI_Controller {
 		
 		$this->load->database(); // load database	
 		$this->load->library('HybridAuthLib');
-		//$this->load->model('login_database');
+		$this->load->model('login_model');
 
 		$this->load->model('blog_model'); // load Blog model
 		$this->load->model('event_model'); // load Event model
@@ -38,15 +38,22 @@ class Login extends CI_Controller {
 				$service = $this->hybridauthlib->authenticate($provider);
 				
 				if ($service->isUserConnected()) {
-					
+
 					$user_profile = $service->getUserProfile();
-					
-					$data['soc'] = $provider;
-					
-					$data['user_profile'] = $user_profile;
-					
-					$this->load->view('user/signup', $data);
-					
+
+					// check if the current user already have authenticated using this provider before
+					$user_exist = $this->login_model->get_user_by_provider_and_id( $provider, $user_profile->identifier );
+
+					if( ! $user_exist )
+					{
+						$data['soc'] = $provider;
+						$data['user_profile'] = $user_profile;
+						$this->load->view('user/signup', $data);
+					}else{
+						redirect(base_url());
+					}
+
+
 				} else // Cannot authenticate user				
 				{
 					show_error('Cannot authenticate user');
@@ -95,12 +102,51 @@ class Login extends CI_Controller {
 			show_error('Error authenticating user.');
 		}
 	}
-	
-	
-	public function login_process(){
-		
+
+
+	public function endpoint()
+	{
+		if ($_SERVER['REQUEST_METHOD'] === 'GET')
+		{
+			$_GET = $_REQUEST;
+		}
+		require_once APPPATH.'/third_party/hybridauth/index.php';
 	}
-	
+
+
+
+
+	// Register Doctors
+	public function register_new_user(){
+
+		//Create Validation Rules
+		$this->form_validation->set_rules('form-name', 'Name', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('form-email', 'Name', 'trim|xss_clean');
+
+
+		if($this->form_validation->run() == FALSE)
+		{
+
+			$data['error'] = validation_errors();
+			//fail validation
+			$this->load->view('template/view_blank_header');
+			$this->load->view('user/view_login',$data);
+			$this->load->view('template/view_footer',$data);
+		}
+		else
+		{
+			$user_data = array(
+				'social_login_user' => $this->input->post('form-name'),
+				'social_login_email' => $this->input->post('form-email'),
+				'hybridauth_provider_name' => $this->input->post('Provider'),
+				'hybridauth_provider_uid' => $this->input->post('provider-id'),
+			);
+
+			$this->db->insert('social_users', $user_data);
+			redirect(base_url());
+		}
+
+	}
 	
 	
 	// Check for user login process

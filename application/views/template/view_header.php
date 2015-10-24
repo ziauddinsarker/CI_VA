@@ -84,14 +84,14 @@
                <?php               
                 }else {
 				//if no user is loged in, then show the loged in button
-                echo '<li><a class="cd-signin btn btn-primary" href="' . site_url("login").'">Login</a></li>';
+                echo '<li><a class="cd-signin btn btn-primary" href="' . site_url("login").'">Google/Facebook Login</a></li>';
 				//echo '<li><a class="cd-signup btn btn-primary" href="' . site_url("register").'">Join (Free)</a></li>';
 				}
 				?>
 			</ul>
-			
+
 		</nav>
-		
+
 		</div><!--/.nav-collapse -->
 	  </div>
 	</nav>
@@ -105,15 +105,15 @@
 <!--			<img class="img-responsive" src="--><?php //echo base_url("assets/images/banner.jpg"); ?><!--">			-->
 		</div>
 	</div>
-	<!--Main Starts Here -->	
+	<!--Main Starts Here -->
 	<div class="main">
-		<div class="container">	
-		
-		
+		<div class="container">
+
+
 			<section class="shop-result medicine-result">
-				
-			<article class="row">					
-			
+
+			<article class="row">
+
             <div role="tabpanel" id="main-tab">
 
             <!-- Nav tabs -->
@@ -123,8 +123,8 @@
               <li role="presentation" class="active"><a href="#price" aria-controls="home" role="tab" data-toggle="tab">Medicine Price</a></li>
               <li role="presentation"><a href="#pharmacist" aria-controls="pharmacist" role="tab" data-toggle="tab">Pharmacist</a></li>
 			  <li role="presentation"><a href="#doctor" aria-controls="messages" role="tab" data-toggle="tab">Doctor</a></li>
-				<li role="presentation"><a href="#healthcare" aria-controls="messages" role="tab" data-toggle="tab">Healthcare Business</a></li>
-              <li role="presentation"><a href="#events" aria-controls="profile" role="tab" data-toggle="tab">Free Events</a></li>
+				<li role="presentation"><a href="#healthcare" aria-controls="messages" role="tab" data-toggle="tab">Health Business</a></li>
+              <li role="presentation"><a href="#events" aria-controls="profile" role="tab" data-toggle="tab">Event</a></li>
 				<li role="presentation"><a href="#discount" aria-controls="messages" role="tab" data-toggle="tab">Discount</a></li>
               <li role="presentation"><a href="#blog" aria-controls="settings" role="tab" data-toggle="tab">Blog</a></li>
 

@@ -42,8 +42,9 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	
-                        	<form role="form" action="" method="post" class="registration-form">
-                        		
+
+								<?php echo form_open("login/register_new_user",array('class' => 'registration-form','role' => 'form'));?>
+
                         		<fieldset>
 								<input type="hidden" name="Provider" value="<?php echo $soc; ?>">									
 								<input type="hidden" name="provider-id" value="<?php echo $user_profile->identifier; ?>">									
@@ -51,7 +52,7 @@
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
 		                        			<h3>Hello! <?php echo $user_profile->displayName; ?></h3>
-											<p>What Describe you best</p>
+
 		                            	
 		                        		</div>
 		                        		<div class="form-top-right">
@@ -61,8 +62,8 @@
 		                            </div>
 		                            <div class="form-bottom">
 									
-									<div id="donate">		
-										
+									<div id="donate">
+										<p>What Describe you best</p>
 										
 										<label class="blue">
 											<input id="doctor" name="reg-user" type="radio" value="doctor" placeholder="You Are" data="required"/><span>Doctor</span>

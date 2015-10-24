@@ -7,9 +7,9 @@
 
 							<div class="row top-title">
 							<h2>Public Points<sup><i>PP</i></sup></h2>
-								<div class="col-md-4">Top Pharmacist</div>
+								<div class="col-md-4">Top Pharmacists</div>
                     			<div class="col-md-4">Top Doctors</div>
-                    			<div class="col-md-4">Top Healthcare Business</div>
+                    			<div class="col-md-4">Top Health Businesses</div>
 							</div>
 
 							<div class="row top-upper">
@@ -348,301 +348,203 @@
 
 							div.html('<div class="row doctor-single">' +
 								'<div class="col-md-12"><a href="http://127.0.0.1/CI_VA/"><< Back</a>'+
-								'<div class="col-md-12 doctor-title">'+
-								'<div class="col-md-4">' +
-								'<h4>'+ doctors.doctor_name +'</h4>'+
-								'</div>'+
-
-								'<div class="col-md-4 col-md-offset-4 right">'+
-								'Facebook   Twitter  Google Plus'+
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description">'+
-								'<div class="col-md-3 doctor-description-first">'+
-								'<img src="" alt="">'+
-								'</div>'+
-
-								'<div class="col-md-6 doctor-description-second">'+
-								'<p>Title/degree*: '+ doctors.doctor_title +'(input by user)</p>'+
-								'<p>Specialist*: '+ doctors.doctor_category_name +'</p>'+
-								'<P>BMDC no*.: '+ doctors.doctor_bmdc_no +'</P>'+
-								'<p>New visit fee: '+ doctors.doctor_category_name +'</p>'+
-								'<p>Phone/Video call fee: '+ doctors.doctor_category_name +'</p>'+
-
-								'</div>'+
-
-								'<div class="col-md-3 doctor-description-third">'+
-								'<p>Phone: '+ doctors.doctor_phone +'</p>'+
-								'<p>Appointment-SMS: e.g.: app, add3</p>'+
-								'<p>Email: '+ doctors.doctor_email +'</p>'+
-								'<p>Website: '+ doctors.doctor_website +'</p>'+
-								'</div>'+
-								'</div>'+
-
-								'<div class="doctor-description-address ">'+
-								'<div class="col-md-3">'+
-								'<p><a href="#doc'+ doctors.doctor_id +'" data-toggle="collapse" data-target="#doc'+ doctors.doctor_id +'">Click here to see Address >></a></p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Address 1:</p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Address 2:</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Address 3:</p>'+
-								'</div>'+
-
-								'<div class="col-md-3 .yellow-background">'+
-								'<p>Phone/Video call</p>'+
-								'</div>'+
-								'</div>'+
-
-								'<div id="doc'+ doctors.doctor_id +'" class="collapse" >'+
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>(full address input by user , word limit)</p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>(full address input by user , word limit)</p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>(full address input by user , word limit)</p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-								'<p>bKash'+
-								'(input by user)'+
-								'DBBL Mobile'+
-								'(input by user)</p>'+
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Saturday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
+								'<article class="container">'+
+
+							'<div class="row">'+
+							'<div class="col-md-4 doctor-info-upper">'+
+
+							'<p>'+ doctors.doctor_name +'<sup>500 PP</sup></p>'+
+							'<img src="<?php echo base_url('assets/images/avatar.png');?>" height="90" width="90" alt="Doctor\'s Image">'+
+											'<ul class="doctor-info-unorder">'+
+											'<li><b>Specialist*:</b> '+ doctors.doctor_category_name +'</li>'+
+										'<li><b>Degree*:</b> (input by user)</li>'+
+										'<li><b>BMDC no*.:</b> '+ doctors.doctor_bmdc_no +'</li>'+
+										'<li><b>New visit fee:</b> (input by user)</li>'+
+										'<li><b>Phone/Video call fee:</b> (input by user)</li>'+
+										'</ul>'+
+										'</div>'+
+										'</div>'+
+
+										'<div class="row ">'+
+											'<div class="col-md-4 doctor-info-all">'+
+
+											'<div class="row social-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#">fb</a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">tw</a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">copy link</a>'+
+										'</div>'+
+										'</div>'+
+
+										'<div class="row contact-doctor">'+
+											'<div class="col-md-12">'+
+											'<a href="#">Contact detail</a>'+
+										'</div>'+
+										'</div>'+
+
+										'<div class="row contact-doctor-details">'+
+											'<ul>'+
+											'<li><b>Phone:</b> '+ doctors.doctor_phone +'</li>'+
+										'<li><b>Appointment-SMS: e.g.:</b> app, add2</li>'+
+										'<li><b>Email:</b> '+ doctors.doctor_email +'</li>'+
+										'<li><b>bKash:</b></li>'+
+										'<li><b>DBBL Mobile:</b></li>'+
+										'</ul>'+
+										'</div>'+
+
+										'<div class="row address-doctor">'+
+											'<div class="col-md-6">'+
+											'<a href="#">Address 1</a>'+
+										'</div>'+
+
+										'<div class="col-md-6">'+
+											'<a href="#">Address 2</a>'+
+										'</div>'+
+										'</div>'+
+
+										'<div class="row address-info-doctor">'+
+											'<div class="col-md-6">'+
+											'<a href="#"></a>'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'</div>'+
+
+											'<div class="col-md-6">'+
+											'<a href="#">'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'<br>'+
+											'</a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#">04 pm - 10 pm</a>'+
+										'</div>'+
+
+										'<div class="col-md-4">'+
+											'<a href="#">< Saturday ></a>'+
+											'</div>'+
+											'<a href="#"></a>'+
+											'<div class="col-md-4">'+
+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Sunday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Monday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Tuesday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Wednesday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"> 05 pm – 10 pm</a>'+
+										'</div>'+
+										'</div>'+
+
+										'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Thursday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row day-time-doctor">'+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#">< Friday ></a>'+
+											'</div>'+
+
+											'<div class="col-md-4">'+
+											'<a href="#"></a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row pp-doctor">'+
+											'Click here to see PP details >>'+
+										'</div>'+
+
+										'<div class="row doctor-pp">'+
+											'<div class="col-md-6">'+
+											'<a href="#">By(members Name)</a>'+
+										'</div>'+
+
+										'<div class="col-md-6">'+
+											'<a href="#">PP</a>'+
+											'</div>'+
+											'</div>'+
+											'</div>'+
+											'</div>'+
+
+											'</article>'+
 
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Sunday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Monday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Tuesday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Wednesday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Thursday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-address-expand">'+
-								'<div class="col-md-3 yellow-background">'+
-								'<p>Friday</p>'+
-								'</div>'+
-
-								'<div class="col-md-2">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>Time: </p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-								'</div>'+
-
-								'<div class="doctor-description-rating ">'+
-
-								'<div class="col-md-3 paste-background">'+
-								'<p><a href="#rat'+ doctors.doctor_id +'" data-toggle="collapse" data-target="#rat'+ doctors.doctor_id +'">See Ratings >></a></p>'+
-								'</div>'+
-
-								'<div class="col-md-2 brick-background">'+
-								'<p>Date</p>'+
-								'</div>'+
-
-								'<div class="col-md-4 brick-background">'+
-								'<p>Description</p>'+
-								'</div>'+
-
-								'<div class="col-md-3 brick-background">'+
-								'<p>RSB Point</p>'+
-								'</div>'+
-
-								'</div>'+
-
-								'<div id="rat'+ doctors.doctor_id +'" class="collapse" >'+
-								'<div class="col-md-12 doctor-description-rating ">'+
-								'<div class="col-md-3 ">'+
-
-								'</div>'+
-
-								'<div class="col-md-2 ">'+
-								'<p>20-08-2015</p>'+
-								'</div>'+
-
-								'<div class="col-md-4 ">'+
-								'<p>This is just description</p>'+
-								'</div>'+
-
-								'<div class="col-md-3 ">'+
-								'<p>25 RSB</p>'+
-								'</div>'+
-
-								'</div>'+
-
-								'<div class="col-md-12 doctor-description-rating ">'+
-								'<div class="col-md-3 yellow-background">'+
-
-								'</div>'+
-
-								'<div class="col-md-2 yellow-background">'+
-								'<p>20-08-2015</p>'+
-								'</div>'+
-
-								'<div class="col-md-4 yellow-background">'+
-								'<p>This is just description</p>'+
-								'</div>'+
-
-								'<div class="col-md-3 yellow-background">'+
-								'<p>25 RSB</p>'+
-								'</div>'+
-
-								'</div>'+
-								'</div>'+
-
-								'</div>'+
 								'</div>'+
 
 								'</div>' );

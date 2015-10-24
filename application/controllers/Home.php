@@ -9,7 +9,17 @@ class Home extends CI_Controller {
 		$this->load->helper('captcha');	
 		$this->load->library('email');
 		
-		$this->load->database(); // load database		
+		$this->load->database(); // load database
+		//print_r($this->session->all_userdata());
+		$this->load->library('HybridAuthLib');
+
+		$provider = Hybrid_Auth::getConnectedProviders();
+
+		//var_dump($sessiondata);
+		//$session_data = $this->session->userdata('logged_in');
+		var_dump($provider);
+
+
 		$this->load->model('blog_model'); // load Blog model
 		$this->load->model('event_model'); // load Event model
 		$this->load->model('company_model'); // load Company model

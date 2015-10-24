@@ -53,7 +53,8 @@ jQuery(document).ready(function() {
     });
     
     // submit
-    $('.registration-form').on('submit', function(e) {
+    /*
+	$('.registration-form').on('submit', function(e) {
     	
     	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
     		if( $(this).val() == "" ) {
@@ -66,6 +67,6 @@ jQuery(document).ready(function() {
     	});
     	
     });
-    
+    */
     
 });
