@@ -1,0 +1,552 @@
+.container {
+	max-width:960px;
+}
+
+.container.banner{
+	margin-top:110px;
+	border: 1px solid;
+	margin-bottom:20px;
+}
+
+a.hover{
+    text-decoration: none;
+}
+
+.main{
+	/* padding-top:120px; */
+	min-height:100vh;
+	/* height:100%; */
+	background-color:#e7e7e7;
+	background-image: url("../images/hero-map@2x.jpg");
+}
+
+#doctors, #company {
+    padding: 17px;
+}
+
+.copyright{
+	text-align:right;
+}
+.footer-navigation a {
+    padding: 6px;
+}
+.navbar-brand {
+    padding: 0 5px 0 0;
+}
+
+.form-group {    
+    width: 100%;
+}
+
+.table-input .form-control {
+    margin: 36px 0 11px;
+    width: 611px;
+	height:50px;
+}
+.main-nav a.cd-signup {
+    background: #2f889a none repeat scroll 0 0;
+    border: medium none;
+}
+#map-canvas {
+        
+        height: 144px;
+		
+    }
+.shop-list.col-md-5 {
+    background: none repeat scroll 0 0 silver;
+    padding: 10px;
+}
+
+.col-md-7.medicine-price {
+    background: none repeat scroll 0 0 powderblue;
+}
+
+.row.main-upper {
+	background: none repeat scroll 0 0 thistle;
+	padding:10px 0 10px 0;
+	margin-bottom:10px;
+}  	
+	
+.row.medicine-description {
+	padding: 0 0 0 17px;
+}
+
+.btn.btn-primary {
+    margin: 2px;
+    padding: 4px 6px;
+}
+#healthcare .btn-group .row .col-md-4 .btn.btn-primary {
+	text-align: left;
+    width: 200px;
+}
+
+.row.shop-list-single {
+    background: none repeat scroll 0 0 red;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.row.main-result {
+    padding-bottom: 113px;
+}
+
+.container-full{
+	background: none repeat scroll 0 0 #000;
+    bottom: 50px;
+    color: #fff;
+    height: 110px;
+    margin: 0 auto;
+    opacity: 0.8;
+    padding: 17px 0 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.container-full > p {
+    font-size: 20px;
+}
+.container-full > h4 {
+    color: #fe6;
+    font-size: 14px;
+}
+a {
+color: #000;
+}
+
+.nav.nav-tabs a {
+    color: #fff;
+}
+.navbar.navbar-default.navbar-fixed-top {
+    background: none repeat scroll 0 0 #404040;
+	opacity:0.90;
+}
+
+.event-single {
+    /* background: none repeat scroll 0 0 tan;
+    border-radius: 10px; */
+    margin: 10px 0 8px;
+}
+#main-tab {
+    background: none repeat scroll 0 0 #404040;
+    padding:20px 20px;
+	border-radius:10px;
+	margin-bottom:60px;
+}
+
+.medicine-description {
+    background: none repeat scroll 0 0 white;
+    margin: 0 0 27px;
+}
+.shop-single {
+    
+	margin: 30px 0 10px 30px;
+}
+.tab-pane.active {
+    background: none repeat scroll 0 0 white;
+	padding:10px;
+}
+
+.form-block {
+    
+}
+
+.medicine-price-graph {
+    margin: 30px 0 0;
+}
+
+.shop{
+	margin-bottom:10px;
+	background: none repeat scroll 0 0 powderblue;
+}
+.shop:hover{
+	margin-bottom:10px;
+	background: none repeat scroll 0 0 red;
+	color:#fff;
+}
+
+.shop .col-md-9 > h5 {
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.medicine-verity {
+    background: none repeat scroll 0 0 powderblue;
+    margin: 16px;
+    padding: 25px 0 40px;
+	border-radius:5px;
+}
+
+.progress {
+   margin: -26px 0 0 214px;
+    text-align: center;
+    width: 65%;
+}
+
+.medicine-desc-image {
+    margin: 17px 0 0;
+}
+
+.brand-rating a{
+	color:red;
+}
+
+.medicine-result-generic {
+    font-size: 14px;
+}
+
+.doctors-single {
+    background: none repeat scroll 0 0 thistle;
+    border-radius: 10px;
+    margin: 0 0 8px;
+    padding: 10px;
+}
+
+.doctors-rating a{
+	color:red;
+}
+
+.result-medicine {
+    min-height: 170px;
+}
+
+
+.about-page {
+    padding: 0 36px 0 35px;
+}
+.glyphicon-home::before {
+    padding: 0 10px 0 0;
+}
+
+.glyphicon-earphone::before {
+    padding: 0 10px 0 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+
+.doctors-profile {
+    background: lightsteelblue none repeat scroll 0 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.row.post-single {
+    /* background-color: silver; */
+    border-radius: 5px;
+}
+
+.row.event-single {
+    border: 1px solid;
+    padding: 0 0 12px;
+}
+
+
+
+
+.nav > li > a {
+    display: block;
+    padding: 10px !important;
+    position: relative;
+}
+
+.main-nav a{
+	border-top:none !important;
+}
+
+
+.doctor-desc .doctor-name,.doctor-desc{
+	background: powderblue;
+}
+.single-doctor {
+    margin-bottom: 10px;
+}
+.single-doctor .col-md-12.doctor-time {
+    display: none;
+} 
+
+.doctor-desc {
+    cursor: pointer;
+}
+
+.small {
+    height: 30px;
+    overflow: hidden;
+}
+.big {
+    height: auto;
+}
+.row .event-single .banner{
+    padding: 23px 11px 0;
+	margin:10px
+    text-align: center;
+}
+
+/* .row .event-single .col-md-12.banner > img {
+    padding: 23px 0px 0;
+}
+ */
+/*************Top Part****************/
+
+.top-upper{
+    background: mintcream none repeat scroll 0 0;
+    opacity: 0.76;
+}
+.top-lower{
+    background: mintcream none repeat scroll 0 0;
+    opacity: 0.76;
+}
+
+
+
+.top-style li {
+    color: #964f4c;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: outside none none;
+    text-align: center;
+}
+.top-style a {
+     color: #964f4c;
+ }
+
+.top-style a:hover {
+    text-decoration: none;
+}
+
+.rsb-value{
+    color:#5B9BD5
+}
+
+.rsb-text{
+    color:#FF6347
+}
+
+.top-style ul {
+    padding-top: 8px;
+}
+
+.all-top {
+    margin-bottom: 28px;
+}
+
+.top-title {
+    background: #964f4c none repeat scroll 0 0;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/***************Footer**********************/
+.disclaimer {
+    color: #797979;
+    font-size: 11px;
+}
+#footer{
+    background: #404040 none repeat scroll 0 0;
+    position: relative;
+    color: #797979;
+    padding-top: 10px;
+}
+
+
+/***************Header******************/
+.top-banner {
+    background-color: #adadad;
+    border: 1px solid;
+    color: #fff;
+    height: 120px;
+    text-align: center;
+}
+
+
+/*************Shop result*******************/
+.medicine-description {
+    background-color: #FFFFE0;
+}
+
+.shop-result-brand_name {
+    color: #964f4c;
+    font-weight: bold;
+}
+
+.shop-result-generic-name , .shop-result-manufacturer{
+    font-weight: bold;
+}
+
+.medicine-result-description > p {
+    line-height: 10px;
+}
+
+.medicine-description .col-md-4 > h5 {
+    line-height: 10px;
+}
+
+.medicine-result-middle {
+    text-align: center;
+}
+
+
+/************Doctor Tab*********************/
+.doctor-title{
+    background: #b0cfe2 none repeat scroll 0 0;
+    border-bottom: 2px solid;
+}
+
+.doctor-description-second {
+    background-color: #FFFFE0;
+}
+
+.doctor-description-address .col-md-2{
+    background: #964f4c none repeat scroll 0 0;
+    color:#fff;
+    font-weight: bold;
+    font-size: 13px;
+    padding-top: 5px;
+}
+.doctor-description-address .col-md-3{
+    background: #20B2AA;
+    color:#fff;
+    font-weight: bold;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.doctor-description-address .col-md-4 a {
+    color: #fff;
+}
+.doctor-description-address .col-md-4 a:hover {
+    text-decoration: none;
+}
+
+.doctor-single{
+    margin-bottom: 10px;
+}
+
+.yellow-background{
+    background: #ffffe0;
+}
+.brick-background{
+    background: #964f4c none repeat scroll 0 0;
+}
+
+.paste-background{
+    background: #20b2aa none repeat scroll 0 0;
+}
+
+.col-md-2.brick-background,.col-md-3.brick-background,.col-md-4.brick-background {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+}
+.col-md-3.paste-background > p {
+     padding-top: 5px;
+ }
+
+.col-md-3.paste-background a {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.doctor-description-address-expand .col-md-3{
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.doctor-description-address-expand {
+    border-bottom: 1px solid;
+}
+/***************Doctors Tab*****************/
+.doctor-category-filter .col-md-3 .btn-group .btn {
+    width: 221px;
+}
+
+#healthcare_content{
+    overflow-y: scroll;
+    height:600px;
+    display: none;
+    margin-top: 10px;
+}
+
+/************Typeahed file*************/
+
+.typeahead {
+	background-color: #FFFFFF;
+	margin: 36px 0 11px;
+    width: 100%;
+	height:50px;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+	background-color: red;
+	 margin: 35px 0 0 0;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	padding: 8px 0;
+	width: 452px;
+}
+.tt-suggestion {
+	background: #e7e7e7;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 5px 15px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
+.typeahead, .tt-query, .tt-hint {
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    font-size: 24px;
+    height: 50px !important;
+    line-height: 30px;
+    outline: medium none;
+    padding: 8px 12px;
+    width: 451px;
+}
+
+.right nav a {
+    background: #20B2AA none repeat scroll 0 0;
+    float: right;
+    padding: 10px;
+    color:#fff;
+    font-weight: bold;
+}
+
+.col-md-8.right {
+    float: right;
+    margin: 0 -15px 0 0;
+    padding: 0;
+}
+
+.doctor-title .col-md-4 > h4 {
+    color: #964F4C;
+}/****************************************************/.btn-link-1 {	display: inline-block;	height: 50px;	margin: 0 5px;	padding: 16px 20px 0 20px;	background: #19b9e7;	font-size: 16px;    font-weight: 300;    line-height: 16px;    color: #fff;    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;}.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }.btn-link-2 {	display: inline-block;	height: 50px;	margin: 0 5px;	padding: 15px 20px 0 20px;	background: rgba(0, 0, 0, 0.3);	border: 1px solid #fff;	font-size: 16px;    font-weight: 300;    line-height: 16px;    color: #fff;    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;}.btn-link-2:hover, .btn-link-2:focus, .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }/***** Top menu *****/.navbar {	padding-top: 10px;	background: #333;	background: rgba(51, 51, 51, 0.3);	border: 0;	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;}.navbar.navbar-no-bg { background: none; }ul.navbar-nav {	font-size: 16px;	color: #fff;}.navbar-inverse ul.navbar-nav li { padding-top: 8px; padding-bottom: 8px; }.navbar-inverse ul.navbar-nav li .li-text { opacity: 0.8; }.navbar-inverse ul.navbar-nav li a { display: inline; padding: 0; color: #fff; }.navbar-inverse ul.navbar-nav li a:hover { color: #fff; opacity: 1; border-bottom: 1px dotted #fff; }.navbar-inverse ul.navbar-nav li a:focus { color: #fff; outline: 0; opacity: 1; border-bottom: 1px dotted #fff; }.navbar-inverse ul.navbar-nav li .li-social a {	margin: 0 5px;	font-size: 28px;	vertical-align: middle;}.navbar-inverse ul.navbar-nav li .li-social a:hover, .navbar-inverse ul.navbar-nav li .li-social a:focus { border: 0; color: #19b9e7; }.navbar-brand {	width: 123px;	background: url(../img/logo.png) left center no-repeat;	text-indent: -99999px;}/***** Top content *****/.inner-bg {    padding: 40px 0 170px 0;}.top-content .text {	color: #fff;}.top-content .text h1 { color: #fff; }.top-content .description {	margin: 20px 0 10px 0;}.top-content .description p { opacity: 0.8; }.top-content .description a {	color: #fff;}.top-content .description a:hover, .top-content .description a:focus { border-bottom: 1px dotted #fff; }.top-content .top-big-link {	margin-top: 35px;}.form-box {	padding-top: 40px;}.form-top {	overflow: hidden;	padding: 0 25px 15px 25px;	background: #fff;	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;	text-align: left;}.form-top-left {	float: left;	width: 75%;	padding-top: 25px;}.form-top-left h3 { margin-top: 0; }.form-top-right {	float: left;	width: 25%;	padding-top: 5px;	font-size: 66px;	color: #ddd;	line-height: 100px;	text-align: right;}.form-bottom {	padding: 25px 25px 30px 25px;	background: #eee;	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;	text-align: left;}form .form-bottom textarea {	height: 100px;}form .form-bottom button.btn {	min-width: 105px;}form .form-bottom .input-error {	border-color: #19b9e7;}form.registration-form fieldset {	display: none;}/***** Media queries *****/@media (min-width: 992px) and (max-width: 1199px) {}@media (min-width: 768px) and (max-width: 991px) {}@media (max-width: 767px) {		.navbar { padding-top: 0; }	.navbar.navbar-no-bg { background: #333; background: rgba(51, 51, 51, 0.9); }	.navbar-brand { height: 60px; margin-left: 15px; }	.navbar-collapse { border: 0; }	.navbar-toggle { margin-top: 12px; }		.inner-bg { padding: 40px 0 110px 0; }	.top-content .top-big-link { margin-top: 25px; }	.top-content .top-big-link a.btn { margin-top: 10px; }		.form-bottom { padding-bottom: 25px; }	form .form-bottom button.btn { margin-bottom: 5px; }}@media (max-width: 415px) {		h1, h2 { font-size: 32px; }}/* Retina-ize images/icons */@mediaonly screen and (-webkit-min-device-pixel-ratio: 2),only screen and (   min--moz-device-pixel-ratio: 2),only screen and (     -o-min-device-pixel-ratio: 2/1),only screen and (        min-device-pixel-ratio: 2),only screen and (                min-resolution: 192dpi),only screen and (                min-resolution: 2dppx) {		/* logo */    .navbar-brand {    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;    }	}/**************************/#donate {    margin:4px;       float:left;}#donate label {    float:left;    width:170px;    margin:4px;    background-color:#EFEFEF;    border-radius:4px;    border:1px solid #D0D0D0;    overflow:auto;       }#donate label span {    text-align:center;    font-size: 32px;    padding:13px 0px;    display:block;}#donate label input {    position:absolute;    top:-20px;	display:none;}#donate input:checked + span {    background-color:#404040;    color:#F7F7F7;}#donate .yellow {    background-color:#FFCC00;    color:#333;}#donate .blue {    background-color:#00BFFF;    color:#333;}#donate .pink {    background-color:#FF99FF;    color:#333;}#donate .green {    background-color:#A3D900;    color:#333;}#donate .purple {    background-color:#B399FF;    color:#333;}
