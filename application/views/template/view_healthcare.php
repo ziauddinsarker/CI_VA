@@ -2,7 +2,7 @@
 				<?php if($this->session->userdata('user_id')) { ?>
 				<div class="row">
 				<!-- Trigger the modal with a button -->
-				<button type="button" title="Hooray!" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#healthcare-modal">+</button>
+				<button type="button" title="Hooray!" class="new-post-button btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#healthcare-modal">+</button>
 
 				<!-- Modal -->
 				<div id="healthcare-modal" class="modal fade" role="dialog">

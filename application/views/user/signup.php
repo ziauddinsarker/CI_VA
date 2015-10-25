@@ -138,6 +138,23 @@
 				                        	<label class="sr-only" for="form-specility">Specility</label>
 				                        	<input type="text" name="form-specility" placeholder="Specility..." class="form-specility form-control" id="form-specility">
 				                        </div>
+
+										<div class="signup-notice">
+											<h5>Notice!!!</h5>
+											<p><b>Terms and conditions:</b> By creating your profile on bhalo-achee.com, you confirm that all the
+											information you have provided herein are correct. Bhalo-Achee.com team may verify your profile
+											information manually to know if you are a doctor or a pharmacist or other health expert or business,
+											and deactivate your account if any untrue information is found. Bhalo-Achee.com also reserves the
+											right to deactivate your account in the following cases:</p>
+											<ul>
+											<li>For providing wrong profile information.</li>
+												<li>For posting obscene, offensive, racist, threatening, hatred provoking, defaming, extreme, vulgar, illegal and fraudulent contents.</li>
+												<li>For Spamming/Advertising/Self-promoting posts.</li>
+												<li>For posting copyright-infringing materials without consent of the owner.</li>
+												<li>For posting Banglish (writing Bangla words in English/Roman alphabets).</li>
+											Please write in either Bangla or English.
+											</ul>
+										</div>
 				                    										
 				                        <button type="button" class="btn btn-previous">Previous</button>
 										<button type="submit" class="btn">Submit!</button>

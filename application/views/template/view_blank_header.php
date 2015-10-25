@@ -67,20 +67,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="https://twitter.com/BhaloAchee" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
 
                         <?php
-                        if($this->session->userdata('user_id'))//if user is loged in, display comment box
+                        if($this->session->userdata('user_id')&& $this->session->userdata('user_type'))//if user is loged in, display comment box
                         {
                             ?>
                             <!-- <li><a class="cd-signin btn btn-primary" href="<?php  //base_url()?>users/logout">Logout</a></li>-->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-2x"></i><span class="caret"></span></a>
-                                <ul class="dropdown-menu dropdown-user">
+
                                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
                                     <li><a href="<?php base_url() ?>admin"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php base_url() ?>users/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
+
                             <?php
                         }else {
                         }

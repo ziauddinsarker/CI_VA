@@ -3,7 +3,7 @@
 	  <!-- Events Modal -->
 	  <div class="row">
 		<!-- Trigger the modal with a button -->
-		<button type="button" title="Hooray!" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">+</button>
+		<button type="button" title="Hooray!" class="new-post-button btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">+</button>
 
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
@@ -125,30 +125,77 @@
 		</div>
 	</div>
 		<?php } ?>
-		
-		
+
+
+
+
+
+	<article class="container">
+
 		<!-- All Events -->
 		<?php foreach($events as $event){?>
-			<div class="row event-single">
-			<br>
-				<div class="col-md-12 banner">
-					<img class="img-responsive" src="<?php echo base_url("assets/images/banner-120x728.jpg"); ?>" alt="">
+		<div class="row">
+			<div class="col-md-4 doctor-info-upper">
+
+				<p><?php echo $event->events_name;?><sup>500 PP</sup></p>
+				<img class="img-responsive" src="<?php echo base_url("assets/images/banner-120x728.jpg"); ?>" alt="">
+				<ul class="doctor-info-unorder">
+
+					<li><b>Business Ared*:</b> (input by user)</li>
+					<li><b>Event On.*:</b> (input by user)</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="row ">
+			<div class="col-md-4 doctor-info-all">
+
+				<div class="row social-doctor">
+					<div class="col-md-4">
+						<a href="#">fb</a>
+					</div>
+
+					<div class="col-md-4">
+						<a href="#">tw</a>
+					</div>
+
+					<div class="col-md-4">
+						<a href="#">copy link</a>
+					</div>
 				</div>
-			
-				<div class="col-md-12">
-					<a><h3><?php echo $event->events_name;?></h3></a><sup>By: <?php echo $event->username;?></sup>
-					<div class="fb-share-button" data-href="<?php echo site_url();?>"/"<?php echo $event->events_id;?>" data-layout="button_count"></div>
+
+				<div class="row contact-doctor">
+					<div class="col-md-12">
+						<a href="#">Contact detail</a>
+					</div>
 				</div>
-				<div class="col-md-4">				
-					<h5><b>Events Time:</b> <?php echo $event->events_time;?></h5>							
-					<h5><b>Phone: </b><?php echo $event->events_phone;?></h5>
-					<h5><b>Email: </b><?php echo $event->events_email;?></h5>					
+
+				<div class="row contact-doctor-details">
+					<ul>
+						<li><b>Phone:</b> <?php echo $event->events_phone;?></li>
+						<li><b>Contact Time:</b> <?php echo $event->events_contact_time;?></li>
+						<li><b>Email:</b> <?php echo $event->events_email;?></li>
+						<li><b>Website/Page:</b> (input by user)</li>
+					</ul>
 				</div>
-				<div class="col-md-8">			
-					<h5><b>Contact Time: </b> <?php echo $event->events_contact_time;?></h5>
-					<h5><b>Address: </b><?php echo $event->events_address;?></h5>
-				</div>							
-			  </div>
-		 <?php }?>  				
+
+
+				<div class="row pp-doctor">
+					Event Details
+				</div>
+
+				<div class="row contact-doctor-details">
+					<ul>
+						<li><b>Event Date:</b> <?php echo $event->events_time;?></li>
+						<li><b>Event Time:</b> <?php echo $event->events_time;?></li>
+						<li><b>Event Location:</b> <?php echo $event->events_address;?></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<?php }?>
+	</article>
+
 	
   </div>

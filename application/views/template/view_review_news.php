@@ -4,7 +4,7 @@
 			<?php if($this->session->userdata('user_id')) { ?>
 			<div class="row">
 				<!-- Trigger the modal with a button -->
-				<button type="button" title="Hooray!" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#blog-modal">+</button>
+				<button type="button" title="Hooray!" class="new-post-button btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#blog-modal">+</button>
 
 				<!-- Blog Modal -->
 				<div id="blog-modal" class="modal fade" role="dialog">
@@ -68,22 +68,63 @@
 				  </div>
 				</div>
 			</div>
-			<?php } ?>			
-			  
-			  <!-- All Blog and News -->			  
-			 <?php foreach($blogs as $blog){?>
-				<div class="row">
-					<div class="col-md-12">
-					<h3><a href="<?=  base_url()?>blog/post/<?= $blog->post_id;?>"> <?php echo $blog->post_title;?></a></h3>
-					<!-- <p>Author: </p> -->
-					<?php if($this->session->userdata('user_id')) { ?>
-					<p>
-						<a href="<?=  base_url()?>blog/editpost/<?= $blog->post_id;?>"><span class="glyphicon glyphicon-edit" title="Edit post"></span></a> | 
-						<a href="<?=  base_url()?>blog/deletepost/<?= $blog->post_id;?>"><span style="color:#f77;" class="glyphicon glyphicon-remove-circle" title="Delete post"></span></a>
-					</p>						
-					<?php } ?>
-						<p><?php echo $blog->post;?></p>					    
-					</div>								
+			<?php } ?>
+
+
+	<article class="row">
+		<div class="col-md-12">
+		<?php foreach($blogs as $blog){?>
+			<div class="up-doc">
+				<div class="doctor-info-upper">
+					<h4><a href="<?=  base_url()?>blog/post/<?= $blog->post_id;?>"> <?php echo $blog->post_title;?></a></h4>
 				</div>
-			 <?php }?>  
+			</div>
+
+			<div class="">
+				<div class="col-md-12 doctor-info-all">
+
+					<div class="row social-doctor">
+						<div class="col-md-4">
+							<a href="#">fb</a>
+						</div>
+
+						<div class="col-md-4">
+							<a href="#">tw</a>
+						</div>
+
+						<div class="col-md-4">
+							<a href="#">copy link</a>
+						</div>
+					</div>
+
+					<div class="row contact-doctor">
+						<div class="col-md-12">
+							<a href="#">Detail</a>
+						</div>
+					</div>
+
+
+					<div class="row contact-doctor-details">
+						<?php echo $blog->post;?>
+					</div>
+
+					<div class="row contact-doctor-details">
+						<p>Submit post with tags*: Community Pharmacy, Disease FAQ, Fan’s blog, Fitness, Health issue, Health
+							policy, Health product review, Health research, Health service review, Health tips, Healthcare, Home
+							remedy , Medicine review, Mental health, New product , New treatment, Yoga, Product review, Others )</P>
+					</div>
+				</div>
+			</div>
+			<?php if($this->session->userdata('user_id')) { ?>
+				<p>
+					<a href="<?=  base_url()?>blog/editpost/<?= $blog->post_id;?>"><span class="glyphicon glyphicon-edit" title="Edit post"></span></a> |
+					<a href="<?=  base_url()?>blog/deletepost/<?= $blog->post_id;?>"><span style="color:#f77;" class="glyphicon glyphicon-remove-circle" title="Delete post"></span></a>
+				</p>
+			<?php } ?>
+		<?php }?>
+		</div>
+	</article>
+
+
+
 </div>

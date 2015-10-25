@@ -208,7 +208,73 @@
 								// me.company_name or me['company_name']
 								//company.innerHTML = company.innerHTML('<p>' + this.company_name + '</p>');
 								//company.innerHTML('<p>Company Name: ' + me.company_name + '</p>');
-								 div.html('<div class="panel-group" id="accordion">'+
+								 div.html('<article class="container">'+
+							'<div class="row up-doc">'+
+							'<div class="col-md-4 doctor-info-upper">'+
+
+							'<p>Dhaka Clinic<sup>500 PP</sup></p>'+
+							'<img src="" height="90" width="90" alt="Doctor\'s Image">'+
+							'<ul class="doctor-info-unorder">'+
+
+											'<li><b>Business Ared*:</b> (input by user)</li>'+
+											'<li><b>About.*:</b> (input by user)</li>'+
+
+											'</ul>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row ">'+
+												'<div class="col-md-4 doctor-info-all">'+
+
+												'<div class="row social-doctor">'+
+												'<div class="col-md-4">'+
+												'<a href="#">fb</a>'+
+												'</div>'+
+
+												'<div class="col-md-4">'+
+												'<a href="#">tw</a>'+
+												'</div>'+
+
+												'<div class="col-md-4">'+
+												'<a href="#">copy link</a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row contact-doctor">'+
+												'<div class="col-md-12">'+
+												'<a href="#">Contact detail</a>'+
+											'</div>'+
+											'</div>'+
+
+											'<div class="row contact-doctor-details">'+
+												'<ul>'+
+												'<li><b>Phone:</b> (input by user)</li>'+
+											'<li><b>Email:</b> (input by user)</li>'+
+											'<li><b>Facebook Page:</b> (input by user)</li>'+
+											'</ul>'+
+											'</div>'+
+
+
+											'<div class="row pp-doctor">'+
+												'Click here to see PP details >>'+
+											'</div>'+
+
+											'<div class="row doctor-pp">'+
+												'<div class="col-md-6">'+
+												'<a href="#">By(members Name)</a>'+
+											'</div>'+
+
+											'<div class="col-md-6">'+
+												'<a href="#">PP</a>'+
+												'</div>'+
+												'</div>'+
+												'</div>'+
+												'</div>'+
+
+												'</article>'
+
+
+									 /*'<div class="panel-group" id="accordion">'+
 											'<div class="panel panel-default">'+
 											'<div class="panel-heading">'+
 												'<div class="panel-title">'+
@@ -249,7 +315,14 @@
 												'</div>'+
 											'</div>'+
 										'</div>'+
-									'</div>');
+									'</div>'
+								 */
+
+
+
+
+
+								 );
 								company.prepend(div); 
 								
 						});

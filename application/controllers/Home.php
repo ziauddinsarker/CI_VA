@@ -18,9 +18,6 @@ class Home extends CI_Controller {
 		//var_dump($session_data);
 
 
-
-
-
 		$this->load->model('blog_model'); // load Blog model
 		$this->load->model('event_model'); // load Event model
 		$this->load->model('company_model'); // load Company model
@@ -59,10 +56,6 @@ class Home extends CI_Controller {
 
 		$this->data['doctors_category_22_1'] = $this->home_model->getDoctorsCategoryOnly(21,0);
 		$this->data['doctors_category_22_2'] = $this->home_model->getDoctorsCategoryOnly(21,22);
-
-
-
-
 
 
 		$this->data['doctors_category_only'] = $this->home_model->getDoctorsCategoryOnly();
