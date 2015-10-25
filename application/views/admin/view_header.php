@@ -6,14 +6,6 @@
 <html lang="en">
 
 
-<?php if($this->session->userdata('user_id')) {
-
-} else {
-	 
-	 redirect('login', 'refresh');
-	//header("location:  redirect('login', 'refresh');");
-}
-?>
 <head>
 
     <meta charset="utf-8">
@@ -82,7 +74,7 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-<?php if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'admin') { ?>
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
 				
@@ -113,7 +105,7 @@
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-<?php }elseif($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'doctor') { ?>
+
 			
 		<div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -136,7 +128,7 @@
                 <!-- /.sidebar-collapse -->
             </div>	
 			
-<?php } ?>
+
             <!-- /.navbar-static-side -->
         </nav>
 		

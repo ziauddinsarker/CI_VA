@@ -18,6 +18,21 @@ Class Login_model extends CI_Model {
 	}
 
 
+	function get_user_type_by_provider_and_id($provider_id){
+		$this->db->select('hybridauth_provider_uid,hybridauth_provider_name,social_login_user_type');
+		$this->db->where('hybridauth_provider_uid', $provider_id);
+		$query = $this->db->get('social_users');
+
+		if ($query->num_rows() > 0)
+		{
+			$row = $query->row();
+			return $row->social_login_user_type;
+		}
+
+		return null; // or wh
+	}
+
+
 
 
 	private function email_exists($email)
@@ -96,4 +111,3 @@ Class Login_model extends CI_Model {
 }
 
 ?>
-

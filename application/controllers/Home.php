@@ -8,16 +8,17 @@ class Home extends CI_Controller {
         parent::__construct();        
 		$this->load->helper('captcha');	
 		$this->load->library('email');
+		$this->load->model('login_model');
 		
 		$this->load->database(); // load database
 		//print_r($this->session->all_userdata());
 		$this->load->library('HybridAuthLib');
 
-		$provider = Hybrid_Auth::getConnectedProviders();
+		//$session_data = $this->session->all_userdata();
+		//var_dump($session_data);
 
-		//var_dump($sessiondata);
-		//$session_data = $this->session->userdata('logged_in');
-		var_dump($provider);
+
+
 
 
 		$this->load->model('blog_model'); // load Blog model
@@ -85,9 +86,11 @@ class Home extends CI_Controller {
 		 
     }
 
+
 	//Index Function
 	public function index()	
-	{		
+	{
+
 		 	$this->load->view('template/view_header', $this->data);
 			$this->load->view('template/view_about', $this->data);
 			$this->load->view('template/view_top_list', $this->data);
@@ -344,7 +347,7 @@ class Home extends CI_Controller {
         {
             //if not valid
             $this->load->view('template/view_header');
-            $this->load->view('view_home',$data);			
+            $this->load->view('view_home');
             $this->load->view('template/view_footer');
         }
         else

@@ -83,9 +83,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </li>
                             <?php
                         }else {
-                            //if no user is loged in, then show the loged in button
-                            echo '<li><a class="cd-signin btn btn-primary" href="' . site_url("login").'">Login</a></li>';
-                            echo '<li><a class="cd-signup btn btn-primary" href="' . site_url("register").'">Join (Free)</a></li>';
                         }
                         ?>
                     </ul>

@@ -14,13 +14,19 @@ class Admin extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->model('blog_model');
 		$this->load->model('profile_model');
+		$this->load->library('HybridAuthLib');
     }
 
 	public function index()
-	{ 		
-		$this->load->view('admin/view_header');
-       	$this->load->view('admin/view_admin');
-        $this->load->view('admin/view_footer');	
+	{
+		if((Hybrid_Auth::getConnectedProviders())){
+			$this->load->view('admin/view_header');
+			$this->load->view('admin/view_admin');
+			$this->load->view('admin/view_footer');
+		}else{
+			redirect(base_url('login'));
+		}
+
 	}
 	
 	public function medicine()

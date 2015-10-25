@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		
+
 		$this->load->database(); // load database	
 		$this->load->library('HybridAuthLib');
 		$this->load->model('login_model');
@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 		try {
 			
 			if ($this->hybridauthlib->providerEnabled($provider)) {
-				
+
 				$service = $this->hybridauthlib->authenticate($provider);
 				
 				if ($service->isUserConnected()) {
@@ -48,8 +48,20 @@ class Login extends CI_Controller {
 					{
 						$data['soc'] = $provider;
 						$data['user_profile'] = $user_profile;
+
+						$this->session->set_userdata('user_id', $user_profile->identifier);
+
+
 						$this->load->view('user/signup', $data);
 					}else{
+
+						$this->session->set_userdata('user_id', $user_profile->identifier);
+
+						$user_id = $user_profile->identifier;
+
+						$type = $this->login_model->get_user_type_by_provider_and_id($user_id);
+						$this->session->set_userdata('user_type', $type);
+
 						redirect(base_url());
 					}
 
@@ -103,6 +115,13 @@ class Login extends CI_Controller {
 		}
 	}
 
+	public function social_logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url());
+
+	}
+
 
 	public function endpoint()
 	{
@@ -121,7 +140,15 @@ class Login extends CI_Controller {
 
 		//Create Validation Rules
 		$this->form_validation->set_rules('form-name', 'Name', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('form-email', 'Name', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-email', 'User Email', 'trim|xss_clean');
+		$this->form_validation->set_rules('user_type', 'Registerd User Type', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-title', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-bmdc', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-pcrn', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-experties', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-fbpagelink', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-dist', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-specility', 'Title/Degree', 'trim|xss_clean');
 
 
 		if($this->form_validation->run() == FALSE)
@@ -135,15 +162,77 @@ class Login extends CI_Controller {
 		}
 		else
 		{
-			$user_data = array(
-				'social_login_user' => $this->input->post('form-name'),
-				'social_login_email' => $this->input->post('form-email'),
-				'hybridauth_provider_name' => $this->input->post('Provider'),
-				'hybridauth_provider_uid' => $this->input->post('provider-id'),
-			);
+			//This insert for Doctor
+			if($this->input->post('user_type') == 'doctor'){
 
-			$this->db->insert('social_users', $user_data);
-			redirect(base_url());
+				$user_data = array(
+					'social_login_user' => $this->input->post('form-name'),
+					'social_login_email' => $this->input->post('form-email'),
+					'social_login_user_type' => $this->input->post('user_type'),
+					'hybridauth_provider_name' => $this->input->post('Provider'),
+					'hybridauth_provider_uid' => $this->input->post('provider-id'),
+				);
+
+				$this->db->insert('social_users', $user_data);
+
+				$soc_id = $this->db->insert_id();
+
+				$doctor_data = array(
+					'doctor_title' => $this->input->post('form-title'),
+					'doctor_bmdc_no' => $this->input->post('form-bmdc'),
+					'doctor_district' => $this->input->post('form-dist'),
+					'doctor_specialist' => $this->input->post('form-specility'),
+				);
+
+				$this->db->insert('doctors', $doctor_data);
+				$doctor_id = $this->db->insert_id();
+
+				$user_doctor_data = array(
+					'user_id' => $soc_id,
+					'doctor_id' => $doctor_id,
+				);
+
+				$this->db->insert('user_doc', $user_doctor_data);
+
+
+				redirect(base_url());
+
+			}elseif($this->input->post('user_type') == 'pharmacist'){
+
+				$user_data = array(
+					'social_login_user' => $this->input->post('form-name'),
+					'social_login_email' => $this->input->post('form-email'),
+					'social_login_user_type' => $this->input->post('user_type'),
+					'hybridauth_provider_name' => $this->input->post('Provider'),
+					'hybridauth_provider_uid' => $this->input->post('provider-id'),
+				);
+
+				$this->db->insert('social_users', $user_data);
+
+				$soc_id = $this->db->insert_id();
+
+				$pharmacist_data = array(
+					'doctor_title' => $this->input->post('form-title'),
+					'doctor_bmdc_no' => $this->input->post('form-bmdc'),
+					'doctor_district' => $this->input->post('form-dist'),
+					'doctor_specialist' => $this->input->post('form-specility'),
+				);
+
+				$this->db->insert('doctors', $pharmacist_data);
+				$doctor_id = $this->db->insert_id();
+
+				$user_doctor_data = array(
+					'user_id' => $soc_id,
+					'doctor_id' => $doctor_id,
+				);
+
+				$this->db->insert('user_doc', $user_doctor_data);
+
+
+				redirect(base_url());
+			}
+
+
 		}
 
 	}

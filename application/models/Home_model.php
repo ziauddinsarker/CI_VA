@@ -88,7 +88,14 @@ class Home_model extends CI_Model
 	  $query = $this->db->get('doctors_category',$limit,$offset);
 	  return $query->result();
 	}
-	
+
+	function get_user_info(){
+
+	}
+
+
+
+
 	//Get Discount 
 	public function getAllDiscount(){		
 	  $this->db->select('discount_id,discount_name,discount_time_start');

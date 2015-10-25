@@ -99,6 +99,8 @@
 		<script src="<?php echo base_url('assets/js/typeahead.jquery.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/bloodhound.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/bxslider/jquery.bxslider.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/bootstrap-sortable.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/moment.min.js'); ?>"></script>
 
 <!--		<script src="--><?php ////echo base_url('assets/js/main.js'); ?><!--"></script>-->
 
