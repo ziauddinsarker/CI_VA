@@ -51,6 +51,8 @@ class Login extends CI_Controller {
 
 						$this->session->set_userdata('user_id', $user_profile->identifier);
 
+						$data['specility'] = $this->user_model->get_doctors_specility();
+						$data['district'] = $this->user_model->get_district();
 
 						$this->load->view('user/signup', $data);
 					}else{
@@ -163,7 +165,7 @@ class Login extends CI_Controller {
 		else
 		{
 			//This insert for Doctor
-			if($this->input->post('user_type') == 'doctor'){
+			if($this->input->post('user-type') == 'doctor'){
 
 				$user_data = array(
 					'social_login_user' => $this->input->post('form-name'),
@@ -197,7 +199,7 @@ class Login extends CI_Controller {
 
 				redirect(base_url());
 
-			}elseif($this->input->post('user_type') == 'pharmacist'){
+			}elseif($this->input->post('user-type') == 'pharmacist'){
 
 				$user_data = array(
 					'social_login_user' => $this->input->post('form-name'),

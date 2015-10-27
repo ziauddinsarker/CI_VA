@@ -8,13 +8,7 @@ class healthcare_model extends CI_Model
         parent::__construct();
 		$this->load->database();
     }
-	
-	public function index(){
-		
-		
-		
-	}
-	
+
 	function get_single_healthcare(){
 	  $this->db->select('*');
 	  $this->db->from('company');	  
@@ -23,7 +17,6 @@ class healthcare_model extends CI_Model
 	  //$this->db->get_where('company', 'company_id = $id');
 	  $query = $this->db->get();
 	  return $query->result();	
-		
 	}
 	
 	

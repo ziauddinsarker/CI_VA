@@ -689,3 +689,12 @@ article#doctor-tab div.row .col-md-6 ul li {
 .new-post-button {
     margin: 0 17px 0 0;
 }
+
+select.form-control {
+    border: 3px solid #d9d9d9;
+    height: 46px;
+}
+
+#donate h4 {
+    text-align: center;
+}

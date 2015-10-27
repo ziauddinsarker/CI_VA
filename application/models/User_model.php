@@ -8,19 +8,12 @@ class User_model extends CI_Model
         parent::__construct();
 		$this->load->database();
     }
-	
-	public function index(){
-		
-		
-		
-	}
-	
+
 	function get_all_users(){		
 	  $this->db->select('username,email');
 	  $this->db->from('users');	  	  
 	  $query = $this->db->get();
-	  return $query->result();	
-		
+	  return $query->result();
 	}
 	
 	
@@ -31,12 +24,13 @@ class User_model extends CI_Model
         $this->db->select('doctor_category_id');
         $this->db->select('doctor_category_name');
         $this->db->from('doctors_category');
+		$this->db->order_by('doctor_category_name','ASC');
         $query = $this->db->get();
         $result = $query->result();
 
         //array to store department id & department name
         $doc_cat_id = array('-SELECT-');
-        $doc_cat_name = array('-SELECT-');
+        $doc_cat_name = array('-SELECT SPECILITY-');
 
         for ($i = 0; $i < count($result); $i++)
         {
@@ -52,12 +46,13 @@ class User_model extends CI_Model
         $this->db->select('district_id');
         $this->db->select('district_name');
         $this->db->from('district');
+		$this->db->order_by('district_name','ASC');
         $query = $this->db->get();
         $result = $query->result();
 
         //array to store department id & department name
         $dist_id = array('-SELECT-');
-        $dist_name = array('-SELECT-');
+        $dist_name = array('-SELECT DIST-');
 
         for ($i = 0; $i < count($result); $i++)
         {

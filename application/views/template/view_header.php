@@ -63,37 +63,21 @@
 		  
 		  <nav class="main-nav nav navbar-nav navbar-right">
 			<ul>
-			<li><a href="https://www.facebook.com/BhaloAchee" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
-			<li><a href="https://twitter.com/BhaloAchee" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-			
+				<li><a href="https://www.facebook.com/BhaloAchee" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+				<li><a href="https://twitter.com/BhaloAchee" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+
 				<?php
 					$user_type = $this->session->userdata('user_type');
-					if($user_type == ('Admin' || 'Doctor' || 'Pharmacist' || 'People')){
+					if($user_type == ('Admin' || 'Doctor' || 'Pharmacist' || 'Fan')){
 				?>
-                    <!-- <li><a class="cd-signin btn btn-primary" href="<?php  //base_url()?>users/logout">Logout</a></li>-->
-
 						<li><a href="<?php base_url() ?>admin"><i class="fa fa-user fa-2x"></i></a></li>
-						<?php /*
 
-						<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-2x"></i><span class="caret"></span></a>
-					<ul class="dropdown-menu dropdown-user">
-						<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-
-						<li class="divider"></li>
-						<li><a href="<?php base_url() ?>login/social_logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-						</li>
-					</ul>
-				  </li>
-					*/?>
-
-               <?php               
-                }else {
-				//if no user is loged in, then show the loged in button
-                echo '<li><a class="cd-signin btn btn-primary" href="' . site_url("login").'">Google/Facebook Login</a></li>';
-				//echo '<li><a class="cd-signup btn btn-primary" href="' . site_url("register").'">Join (Free)</a></li>';
+			   <?php
+				}else {
+					//if no user is loged in, then show the loged in button
+					echo '<li><a href="login/social_login/Facebook"><img src="' . base_url("assets/images/fb_login.png") .'" alt="Facebook" width="150"/></a></li>';
+					echo '<li><a href="login/social_login/Google"><img src="' . base_url("assets/images/google_login.png") .'" alt="Facebook" width="150"/></a></li>';
 				}
-			//}
 				?>
 			</ul>
 

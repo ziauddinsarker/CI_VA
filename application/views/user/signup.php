@@ -63,19 +63,19 @@
 		                            <div class="form-bottom">
 									
 									<div id="donate">
-										<p>What Describe you best</p>
+										<h4>Please choose your profile</h4>
 										
 										<label class="blue">
-											<input id="doctor" name="reg-user" type="radio" value="doctor" placeholder="You Are" data="required"/><span>Doctor</span>
+											<input id="doctor" name="user-type" type="radio" value="doctor" placeholder="You Are" data="required"/><span>Doctor</span>
 										</label>
 										<label class="green">
-											<input id="pharmacist" name="reg-user" type="radio" value="pharmacist" placeholder="You Are" data="required"/><span>Pharmacist</span>
+											<input id="pharmacist" name="user-type" type="radio" value="pharmacist" placeholder="You Are" data="required"/><span>Pharmacist</span>
 										</label>
 										<label class="yellow">
-											<input id="health-business" name="reg-user" type="radio" value="health-business" placeholder="You Are" data="required"/><span>Health Business</span>
+											<input id="health-business" name="user-type" type="radio" value="health-business" placeholder="You Are" data="required"/><span>Health Business</span>
 										</label>
 										<label class="purple">
-											<input id="people" name="reg-user" type="radio" value="people" placeholder="You Are" data="required"/><span>People</span>
+											<input id="fan" name="user-type" type="radio" value="fan" placeholder="You Are" data="required"/><span>Fan</span>
 										</label>
 									</div>
 								
@@ -99,23 +99,47 @@
 				                        	<input type="text" name="form-name" placeholder="Name..." class="form-name form-control" value="<?php echo $user_profile->displayName; ?>" id="form-name">
 				                        </div>
 									
-									
+									<!--
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" value="<?php echo $user_profile->email; ?>" id="form-email">
+				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" value="<?php //echo $user_profile->email; ?>" id="form-email">
 				                        </div>
+										-->
+
 										<div class="form-group">
-				                        	<label class="sr-only" for="form-title">Degree/Title</label>
-				                        	<input type="text" name="form-title" placeholder="Title..." class="form-title form-control" id="form-title">
+				                        	<label class="sr-only" for="form-title">Title/Degree</label>
+				                        	<input type="text" name="form-title" placeholder="Title/Degree..." class="form-title form-control" id="form-title">
 				                        </div>
-										
+
 										<div class="form-group">
-				                        	<label class="sr-only" for="form-bmdc">BMDC</label>
-				                        	<input type="text" name="form-bmdc" placeholder="BMDC..." class="form-bmdc form-control" id="form-bmdc">
+											<label class="sr-only" for="form-specility">Specialist</label>
+											<?php
+												$attributes = 'class="form-control" id="form-specility"';
+												echo form_dropdown('specility',$specility,set_value('specility'),$attributes);
+											?>
+										</div>
+
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-bmdc">BMDC No</label>
+				                        	<input type="text" name="form-bmdc" placeholder="BMDC No..." class="form-bmdc form-control" id="form-bmdc">
 				                        </div>
-										
+										<!--
 										<div class="form-group">
-				                        	<label class="sr-only" for="form-pcrn">Pharmacy council registration no</label>
+											<label class="sr-only" for="form-dist">District</label>
+											<input type="text" name="form-dist" placeholder="District..." class="form-dist form-control" id="form-dist">
+										</div>
+										-->
+										<div class="form-group">
+											<!-- the District field -->
+											<label class="sr-only" for="form-dist">District</label>
+												<?php
+												$attributes = 'class="form-control" id="form-dist"';
+												echo form_dropdown('district',$district,set_value('district'),$attributes);
+												?>
+										</div>
+
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-pcrn">Pharmacy Council Registration no</label>
 				                        	<input type="text" name="form-pcrn" placeholder="Pharmacy Council Reg. No...." class="form-pcrn form-control" id="form-pcrn">
 				                        </div>
 										
@@ -129,15 +153,9 @@
 				                        	<input type="text" name="form-fbpagelink" placeholder="Facebook Page Link...." class="form-fbpagelink form-control" id="form-fbpagelink">
 				                        </div>
 										
-										<div class="form-group">
-				                        	<label class="sr-only" for="form-dist">Dist</label>
-				                        	<input type="text" name="form-dist" placeholder="District..." class="form-dist form-control" id="form-dist">
-				                        </div>
+
 										
-										<div class="form-group">
-				                        	<label class="sr-only" for="form-specility">Specility</label>
-				                        	<input type="text" name="form-specility" placeholder="Specility..." class="form-specility form-control" id="form-specility">
-				                        </div>
+
 
 										<div class="signup-notice">
 											<h5>Notice!!!</h5>
@@ -180,7 +198,7 @@
  
 		<script type="text/javascript">
 			$(function () {
-				$("input[name='reg-user']").click(function () {
+				$("input[name='user-type']").click(function () {
 					if ($("#doctor").is(":checked")) {
 						$("#form-title").show();
 						$("#form-bmdc").show();
