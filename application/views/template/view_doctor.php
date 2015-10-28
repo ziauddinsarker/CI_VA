@@ -6,7 +6,7 @@
 
 				<ul>
 					<?php foreach($doctors_category_22_1 as $category){?>
-						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
+						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDistrictOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
 					<?php }?>
 				</ul>
             </div>
@@ -14,7 +14,7 @@
             <div class="col-md-6">
 				<ul>
 					<?php foreach($doctors_category_22_2 as $category){?>
-						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDivisionOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
+						<li><a href="#" id="<?php echo $category->doctor_category_name;?>" onclick="getDistrictOnDoctorTab(this)"><b><?php echo $category->doctor_category_name;?></b><?php echo $category->doctor_category_description;?></a></li>
 					<?php }?>
 				</ul>
 				<?php /*
@@ -28,8 +28,69 @@
                 </div>
  				*/?>
             </div>
-
         </div>
+
+		<table cellspacing="0" cellpadding="0">
+			<tr>
+				<th>Barisal</th>
+				<th>Chittagong</th>
+				<th>Dhaka</th>
+				<th>Khulna</th>
+				<th>Rajshahi</th>
+				<th>Rangpur</th>
+				<th>Sylhet</th>
+			</tr>
+			<tr>
+				<td>
+					<ul>
+						<?php foreach($barisal_division as $barisal){?>
+							<li><a href="#" id="<?php echo $barisal->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $barisal->district_name;?></b></a></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<?php foreach($chittagong_division as $chittagong){?>
+							<li><?php echo $chittagong->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<?php foreach($dhaka_division as $dhaka){?>
+							<li><?php echo $dhaka->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<?php foreach($khulna_division as $khulna){?>
+							<li><?php echo $khulna->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<?php foreach($rajshahi_division as $rajshahi){?>
+							<li><?php echo $rajshahi->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<?php foreach($rangpur_division as $rangpur){?>
+							<li><?php echo $rangpur->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+				<td><ul>
+						<?php foreach($sylhet_division as $sylhet){?>
+							<li><?php echo $sylhet->district_name; ?></li>
+						<?php }?>
+					</ul>
+				</td>
+			</tr>
+		</table>
 
     </article>
 

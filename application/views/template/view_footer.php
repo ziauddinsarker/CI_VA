@@ -335,13 +335,13 @@
 				}
 
 /**********************Doctors Tab Starts ***************************/
-
+/*
 			//Get Division On Doctors Tab
 			function getDivisionOnDoctorTab(doctorCategory){
 				docCategory = doctorCategory.id;
 				$.ajax({
 					type: "POST",
-					url: "<?php echo site_url('home/get_division') ?>",
+					url: "<?php //echo site_url('home/get_division') ?>",
 					data: { data: docCategory },
 					dataType:'json',
 					success: function(result){
@@ -354,10 +354,75 @@
 
 							var div = $('<division/>');
 
-							div.html('<div class="btn-group"  id="division">'+
-								'<label class="btn btn-primary">'+
-								'<input type="radio" name="division" class="track-order-change" id="'+ division.division_name +'" value="'+ division.division_name +'" onclick="getDistrictOnDoctorTab(this)" >'+ division.division_name +''+
-								'</label>' );
+							div.html('<table cellspacing="0" cellpadding="0">' +
+								'<tr>' +
+								'<th>Barisal</th>' +
+								'<th>Chittagong</th>' +
+								'<th>Dhaka</th>' +
+								'<th>Khulna</th>' +
+								'<th>Rajshahi</th>' +
+								'<th>Rangpur</th>' +
+								'<th>Sylhet</th>' +
+								'</tr>' +
+								'<tr>' +
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($barisal_division as $barisal){ ?>' +
+											'<li><a href="#" id="<?php //echo $barisal->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $barisal->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($chittagong_division as $chittagong){ ?>' +
+											//'<li><a href="#" id="<?php //echo $chittagong->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $chittagong->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($dhaka_division as $dhaka){ ?>' +
+											'<li><a href="#" id="<?php // echo $dhaka->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $dhaka->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($khulna_division as $khulna){ ?>' +
+											'<li><a href="#" id="<?php //echo $khulna->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $khulna->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($rajshahi_division as $rajshahi){ ?>' +
+											'<li><a href="#" id="<?php //echo $rajshahi->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $rajshahi->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($rangpur_division as $rangpur){ ?>' +
+											'<li><a href="#" id="<?php //echo $rangpur->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $rangpur->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+									'<td>' +
+										'<ul>' +
+											'<?php //foreach($sylhet_division as $sylhet){ ?>' +
+											'<li><a href="#" id="<?php //echo $sylhet->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $sylhet->district_name;?></b></a></li>' +
+											'<?php //}?>' +
+										'</ul>' +
+									'</td>' +
+
+								'</tr>' +
+							'</table>');
 							location.prepend(div);
 
 						});
@@ -369,13 +434,16 @@
 				});
 			}
 
+*/
+
+
 			//Get Districts from Division
-			function getDistrictOnDoctorTab(division){
-				var currentValue = division.value;
+			function getDistrictOnDoctorTab(doctorCategory){
+				var docCategory = doctorCategory.id;
 				$.ajax({
 					type: "POST",
 					url: "<?php echo site_url('home/get_district') ?>",
-					data: { data: currentValue },
+					data: { data: docCategory },
 					dataType:'json',
 					success: function(result){
 
@@ -387,10 +455,75 @@
 
 							var div = $('<division/>');
 
-							div.html('<div class="btn-group"  id="district">'+
-							'<label class="btn btn-primary">'+
-							'<input type="radio" name="division" class="track-order-change" id="'+ districts.district_name +'" value="'+  districts.district_name +'" onclick="getDoctorsOnDoctorTab(this)" >'+  districts.district_name +''+
-							'</label>');
+							div.html('<table cellspacing="0" cellpadding="0">' +
+								'<tr>' +
+								'<th>Barisal</th>' +
+								'<th>Chittagong</th>' +
+								'<th>Dhaka</th>' +
+								'<th>Khulna</th>' +
+								'<th>Rajshahi</th>' +
+								'<th>Rangpur</th>' +
+								'<th>Sylhet</th>' +
+								'</tr>' +
+								'<tr>' +
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($barisal_division as $barisal){ ?>' +
+								'<li><a href="#" id="<?php echo $barisal->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $barisal->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($chittagong_division as $chittagong){ ?>' +
+									//'<li><a href="#" id="<?php //echo $chittagong->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php //echo $chittagong->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($dhaka_division as $dhaka){ ?>' +
+								'<li><a href="#" id="<?php echo $dhaka->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $dhaka->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($khulna_division as $khulna){ ?>' +
+								'<li><a href="#" id="<?php echo $khulna->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $khulna->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($rajshahi_division as $rajshahi){ ?>' +
+								'<li><a href="#" id="<?php echo $rajshahi->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $rajshahi->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($rangpur_division as $rangpur){ ?>' +
+								'<li><a href="#" id="<?php echo $rangpur->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $rangpur->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'<td>' +
+								'<ul>' +
+								'<?php foreach($sylhet_division as $sylhet){ ?>' +
+								'<li><a href="#" id="<?php echo $sylhet->district_name;?>" onclick="getDoctorsOnDoctorTab(this)"><b><?php echo $sylhet->district_name;?></b></a></li>' +
+								'<?php }?>' +
+								'</ul>' +
+								'</td>' +
+
+								'</tr>' +
+								'</table>');
 							location.prepend(div);
 
 						});

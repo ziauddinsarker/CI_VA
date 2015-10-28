@@ -66,6 +66,16 @@ class Home_model extends CI_Model
 	  $query = $this->db->get();
 	  return $query->result();
 	}
+
+	function get_district_by_division($division_name){
+		$this->db->select("district_id,district_name");
+		$this->db->from('district');
+		$this->db->join('division','district.division = division.division_id');
+		$this->db->where('division_name',$division_name);
+		$this->db->order_by('district_name','ASC');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 	//Get Doctors Category 
 	public function getAllDoctorsCategory($limit = 22, $offset = 0){		

@@ -76,6 +76,16 @@ class Home extends CI_Controller {
 		  //Get Divistion
          $this->data['divisions'] = $this->location_model->get_division();
 
+		//$this->data['dhaka_division'] = $this->get_district_by_division('Dhaka');
+		$this->data['barisal_division'] = $this->home_model->get_district_by_division('Barisal');
+		$this->data['chittagong_division'] = $this->home_model->get_district_by_division('Chittagong');
+		$this->data['dhaka_division'] = $this->home_model->get_district_by_division('Dhaka');
+		$this->data['khulna_division'] = $this->home_model->get_district_by_division('Khulna');
+		$this->data['rajshahi_division'] = $this->home_model->get_district_by_division('Rajshahi');
+		$this->data['rangpur_division'] = $this->home_model->get_district_by_division('Rangpur');
+		$this->data['sylhet_division'] = $this->home_model->get_district_by_division('Sylhet');
+
+
 		 
     }
 
@@ -131,6 +141,7 @@ class Home extends CI_Controller {
 
 
 	/**********Doctor Tab*************/
+	/*
 	public function get_division(){
 		$data = $this->location_model->get_division();
 		echo json_encode($data);
@@ -141,6 +152,16 @@ class Home extends CI_Controller {
 		$data = $this->location_model->get_district($division);
 		echo json_encode($data);
 	}
+*/
+	/**
+	 * @param $division_name
+	 */
+	public function get_district_by_division($division_name){
+		$data = $this->location_model->get_district($division_name);
+		echo json_encode($data);
+	}
+
+
 
 	public function get_doctor(){
 		$doctor_category = $this->input->post('doctorCategory');

@@ -698,3 +698,17 @@ select.form-control {
 #donate h4 {
     text-align: center;
 }
+
+#doctor-tab li {
+    list-style: outside none none;
+    margin: 0 0 0 -36px;
+}
+
+#doctor-tab tbody {
+    vertical-align: top;
+}
+
+table, th, td {
+    border: medium none;
+    border-collapse: collapse;
+}
