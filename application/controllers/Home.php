@@ -85,7 +85,6 @@ class Home extends CI_Controller {
 		$this->data['rangpur_division'] = $this->home_model->get_district_by_division('Rangpur');
 		$this->data['sylhet_division'] = $this->home_model->get_district_by_division('Sylhet');
 
-
 		 
     }
 
@@ -107,7 +106,19 @@ class Home extends CI_Controller {
 			//$this->load->view('template/view_faq', $this->data);
 			//$this->load->view('template/view_contact', $this->data);				
 			$this->load->view('template/view_footer', $this->data);
-	}	
+	}
+
+
+
+
+
+	public function GetBrandName(){
+		$keyword = $this->input->post('keyword');
+		$data = $this->home_model->GetBrandRow($keyword);
+		echo json_encode($data);
+	}
+
+
 
 	
 	public function view_doctor(){
@@ -141,10 +152,24 @@ class Home extends CI_Controller {
 
 
 	/**********Doctor Tab*************/
-	/*
+	/**/
 	public function get_division(){
 		$data = $this->location_model->get_division();
 		echo json_encode($data);
+	}
+
+
+
+
+	public function get_district_with_division(){
+		$this->data['barisal_division'] = $this->home_model->get_district_by_division('Barisal');
+		var_dump($this->data['barisal_division']);
+		$this->data['chittagong_division'] = $this->home_model->get_district_by_division('Chittagong');
+		$this->data['dhaka_division'] = $this->home_model->get_district_by_division('Dhaka');
+		$this->data['khulna_division'] = $this->home_model->get_district_by_division('Khulna');
+		$this->data['rajshahi_division'] = $this->home_model->get_district_by_division('Rajshahi');
+		$this->data['rangpur_division'] = $this->home_model->get_district_by_division('Rangpur');
+		$this->data['sylhet_division'] = $this->home_model->get_district_by_division('Sylhet');
 	}
 
 	public function get_district(){
@@ -152,7 +177,14 @@ class Home extends CI_Controller {
 		$data = $this->location_model->get_district($division);
 		echo json_encode($data);
 	}
-*/
+
+	public function get_all_districts(){
+		$data = $this->location_model->get_all_districts();
+		echo json_encode($data);
+	}
+
+
+
 	/**
 	 * @param $division_name
 	 */

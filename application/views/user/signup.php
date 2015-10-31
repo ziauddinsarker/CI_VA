@@ -115,7 +115,7 @@
 											<label class="sr-only" for="form-specility">Specialist</label>
 											<?php
 												$attributes = 'class="form-control" id="form-specility"';
-												echo form_dropdown('specility',$specility,set_value('specility'),$attributes);
+												echo form_dropdown('form-specility',$specility,set_value('specility'),$attributes);
 											?>
 										</div>
 
@@ -134,7 +134,7 @@
 											<label class="sr-only" for="form-dist">District</label>
 												<?php
 												$attributes = 'class="form-control" id="form-dist"';
-												echo form_dropdown('district',$district,set_value('district'),$attributes);
+												echo form_dropdown('form-dist',$district,set_value('district'),$attributes);
 												?>
 										</div>
 
@@ -229,7 +229,7 @@
 						$("#form-specility").hide();
 					}
 					
-					if ($("#people").is(":checked")) {
+					if ($("#fan").is(":checked")) {
 						$("#form-title").hide();
 						$("#form-bmdc").hide();
 						$("#form-dist").hide();

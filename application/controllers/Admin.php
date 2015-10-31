@@ -76,16 +76,26 @@ class Admin extends CI_Controller {
 	}
 	
 	public function profile(){
-		//$user_type = $this->session->userdata('user_type');
-		//var_dump($user_type);
-		$this->data['profiles'] = $this->profile_model->get_single_doctor();
+		//Get user type from session
+		$user_type = $this->session->userdata('user_type');
+		$user_id = $this->session->userdata('user_id');
 
-		/*if($user_type === 'doctor'){
+		//var_dump($user_type);
+		//var_dump($user_id);
+		//If user is Doctor
+		if($user_type == 'doctor'){
+			$this->data['profiles'] = $this->profile_model->get_single_doctor($user_id, $user_type);
+
+			var_dump($this->data['profiles']);
+
+		//If user is Pharmacist
 		}elseif($user_type == 'pharmacist'){
 			$data['profiles'] = $this->profile_model->get_single_pharmacist();
-		}elseif($user_type == 'business'){
+
+		//If user is health-business
+		}elseif($user_type == 'health-business'){
 			$data['profiles'] = $this->profile_model->get_single_healthcare();
-		}*/
+		}
 
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_user_profile',$this->data);

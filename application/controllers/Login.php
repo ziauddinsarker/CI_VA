@@ -143,9 +143,9 @@ class Login extends CI_Controller {
 		//Create Validation Rules
 		$this->form_validation->set_rules('form-name', 'Name', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('form-email', 'User Email', 'trim|xss_clean');
-		$this->form_validation->set_rules('user_type', 'Registerd User Type', 'trim|xss_clean');
+		$this->form_validation->set_rules('user-type', 'Registerd User Type', 'trim|xss_clean');
 		$this->form_validation->set_rules('form-title', 'Title/Degree', 'trim|xss_clean');
-		$this->form_validation->set_rules('form-bmdc', 'Title/Degree', 'trim|xss_clean');
+		$this->form_validation->set_rules('form-bmdc', 'Form ', 'trim|xss_clean');
 		$this->form_validation->set_rules('form-pcrn', 'Title/Degree', 'trim|xss_clean');
 		$this->form_validation->set_rules('form-experties', 'Title/Degree', 'trim|xss_clean');
 		$this->form_validation->set_rules('form-fbpagelink', 'Title/Degree', 'trim|xss_clean');
@@ -170,7 +170,7 @@ class Login extends CI_Controller {
 				$user_data = array(
 					'social_login_user' => $this->input->post('form-name'),
 					'social_login_email' => $this->input->post('form-email'),
-					'social_login_user_type' => $this->input->post('user_type'),
+					'social_login_user_type' => $this->input->post('user-type'),
 					'hybridauth_provider_name' => $this->input->post('Provider'),
 					'hybridauth_provider_uid' => $this->input->post('provider-id'),
 				);
@@ -180,6 +180,7 @@ class Login extends CI_Controller {
 				$soc_id = $this->db->insert_id();
 
 				$doctor_data = array(
+					'doctor_name' => $this->input->post('form-name'),
 					'doctor_title' => $this->input->post('form-title'),
 					'doctor_bmdc_no' => $this->input->post('form-bmdc'),
 					'doctor_district' => $this->input->post('form-dist'),
@@ -197,6 +198,15 @@ class Login extends CI_Controller {
 				$this->db->insert('user_doc', $user_doctor_data);
 
 
+
+				$this->session->set_userdata('user_id', $this->input->post('provider-id'));
+
+				$user_id = $this->input->post('provider-id');
+
+				$type = $this->login_model->get_user_type_by_provider_and_id($user_id);
+				$this->session->set_userdata('user_type', $type);
+
+
 				redirect(base_url());
 
 			}elseif($this->input->post('user-type') == 'pharmacist'){
@@ -204,7 +214,7 @@ class Login extends CI_Controller {
 				$user_data = array(
 					'social_login_user' => $this->input->post('form-name'),
 					'social_login_email' => $this->input->post('form-email'),
-					'social_login_user_type' => $this->input->post('user_type'),
+					'social_login_user_type' => $this->input->post('user-type'),
 					'hybridauth_provider_name' => $this->input->post('Provider'),
 					'hybridauth_provider_uid' => $this->input->post('provider-id'),
 				);
@@ -213,24 +223,113 @@ class Login extends CI_Controller {
 
 				$soc_id = $this->db->insert_id();
 
-				$pharmacist_data = array(
-					'doctor_title' => $this->input->post('form-title'),
-					'doctor_bmdc_no' => $this->input->post('form-bmdc'),
-					'doctor_district' => $this->input->post('form-dist'),
-					'doctor_specialist' => $this->input->post('form-specility'),
+				$health_business_data = array(
+					'pharmacist_name' => $this->input->post('form-name'),
+					'pharmacist_title' => $this->input->post('form-title'),
+					'pharmacist_reg_no' => $this->input->post('form-pcrn'),
 				);
 
-				$this->db->insert('doctors', $pharmacist_data);
-				$doctor_id = $this->db->insert_id();
+				$this->db->insert('pharmacist', $health_business_data);
+				$pharmacist_id = $this->db->insert_id();
 
 				$user_doctor_data = array(
 					'user_id' => $soc_id,
-					'doctor_id' => $doctor_id,
+					'pharmacist_id' => $pharmacist_id,
 				);
 
-				$this->db->insert('user_doc', $user_doctor_data);
+				$this->db->insert('user_pharma', $user_doctor_data);
 
+				/****************Set session data*********************/
 
+				$this->session->set_userdata('user_id', $this->input->post('provider-id'));
+
+				$user_id = $this->input->post('provider-id');
+
+				$type = $this->login_model->get_user_type_by_provider_and_id($user_id);
+				$this->session->set_userdata('user_type', $type);
+
+				//Redirect after successfully register
+				redirect(base_url());
+
+			}elseif($this->input->post('user-type') == 'health-business'){
+
+				$user_data = array(
+					'social_login_user' => $this->input->post('form-name'),
+					'social_login_email' => $this->input->post('form-email'),
+					'social_login_user_type' => $this->input->post('user-type'),
+					'hybridauth_provider_name' => $this->input->post('Provider'),
+					'hybridauth_provider_uid' => $this->input->post('provider-id'),
+				);
+
+				$this->db->insert('social_users', $user_data);
+
+				$soc_id = $this->db->insert_id();
+
+				$health_business_data = array(
+					'health_business_name' => $this->input->post('form-name'),
+					'health_business_experties' => $this->input->post('form-experties'),
+					'health_business_facebook_link' => $this->input->post('form-fbpagelink'),
+				);
+
+				$this->db->insert('health_business', $health_business_data);
+				$health_business_id = $this->db->insert_id();
+
+				$user_health_business_data = array(
+					'user_id' => $soc_id,
+					'health_business_id' => $health_business_id,
+				);
+
+				$this->db->insert('user_health_business', $user_health_business_data);
+
+				/****************Set session data*********************/
+
+				$this->session->set_userdata('user_id', $this->input->post('provider-id'));
+
+				$user_id = $this->input->post('provider-id');
+
+				$type = $this->login_model->get_user_type_by_provider_and_id($user_id);
+				$this->session->set_userdata('user_type', $type);
+
+				//Redirect after successfully register
+				redirect(base_url());
+			}elseif($this->input->post('user-type') == 'fan'){
+
+				$user_data = array(
+					'social_login_user' => $this->input->post('form-name'),
+					'social_login_email' => $this->input->post('form-email'),
+					'social_login_user_type' => $this->input->post('user-type'),
+					'hybridauth_provider_name' => $this->input->post('Provider'),
+					'hybridauth_provider_uid' => $this->input->post('provider-id'),
+				);
+
+				$this->db->insert('social_users', $user_data);
+
+				$soc_id = $this->db->insert_id();
+
+				$fan_data = array(
+					'fan_name' => $this->input->post('form-name'),
+				);
+
+				$this->db->insert('fan', $fan_data);
+				$fan_id = $this->db->insert_id();
+
+				$user_fan_data = array(
+					'user_id' => $soc_id,
+					'fan_id' => $fan_id,
+				);
+
+				$this->db->insert('user_fan', $user_fan_data);
+
+				/****************Set session data*********************/
+
+				$this->session->set_userdata('user_id', $this->input->post('provider-id'));
+
+				$user_id = $this->input->post('provider-id');
+
+				$type = $this->login_model->get_user_type_by_provider_and_id($user_id);
+				$this->session->set_userdata('user_type', $type);
+
+				//Redirect after successfully register
 				redirect(base_url());
 			}
 

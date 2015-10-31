@@ -75,58 +75,27 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-				
-                    <ul class="nav" id="side-menu">
-              
-                        <li>
-                            <a href="<?php echo site_url('admin');?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-						
-                       
-                        <li>
-                            <a href="<?php echo site_url('admin/medicine');?>"><i class="fa fa-table fa-fw"></i> Medicine </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('admin/shop');?>"><i class="fa fa-edit fa-fw"></i> Shop</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('admin/doctor');?>"><i class="fa fa-wrench fa-fw"></i>Doctors</a>
-                        </li>
-						 <li>
-                            <a href="<?php echo site_url('admin/user');?>"><i class="fa fa-bar-chart-o fa-fw"></i> User</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('admin/blog');?>"><i class="fa fa-sitemap fa-fw"></i> Blog</a>
-                        </li>
-                 
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
 
-			
 		<div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-				
+
                     <ul class="nav" id="side-menu">
-              
+
                         <li>
                             <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-				
+
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i>Post Blog</a>
                         </li>
 						 <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Post Event</a>
-                        </li>                       
-                 
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
-            </div>	
+            </div>
 			
 
             <!-- /.navbar-static-side -->

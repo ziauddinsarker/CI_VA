@@ -712,3 +712,17 @@ table, th, td {
     border: medium none;
     border-collapse: collapse;
 }
+/*********pharmacist home profile*******************/
+
+.home-profile-title > a {
+    color: #964F4C;
+    font-size: 20px;
+}
+
+.home-title-rating-value {
+    color: #5b9bd5;
+}
+
+.home-title-rating-pp {
+    color: #FF6347;
+}

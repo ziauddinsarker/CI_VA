@@ -12,10 +12,15 @@ class Search extends CI_Controller {
 		parse_str($_SERVER['QUERY_STRING'], $_GET);
 	}
 
-	public function get_brand_form_strength($brand){
-		$data = $this->search_model->search_brand_form_strength($brand);				var_dump($data);
-		echo json_encode($data);	}
-		public function get_brand(){					$data = $this->search_model->get();		echo json_encode($data);
+	public function get_brand_form_strength(){
+		$keyword = $this->input->post('keyword');
+		$data = $this->search_model->search_brand_form_strength($keyword);
+		echo json_encode($data);
+	}
+
+		public function get_brand(){
+			$data = $this->search_model->get();
+			echo json_encode($data);
 	}
 
 }

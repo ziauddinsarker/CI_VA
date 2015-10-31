@@ -8,7 +8,7 @@
 						</div>
 					</div>
 		</article>
-	
+
 		<article class="row" id="div-dis-tha">
 			<div class="col-md-1 col-md-offset-2">
 			<h4>Division</h4>

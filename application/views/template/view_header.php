@@ -68,7 +68,7 @@
 
 				<?php
 					$user_type = $this->session->userdata('user_type');
-					if($user_type == ('Admin' || 'Doctor' || 'Pharmacist' || 'Fan')){
+					if($user_type == ('doctor' || 'pharmacist' || 'health-business' || 'fan')){
 				?>
 						<li><a href="<?php base_url() ?>admin"><i class="fa fa-user fa-2x"></i></a></li>
 

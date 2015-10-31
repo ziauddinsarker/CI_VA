@@ -24,12 +24,12 @@
             <div class="row up-doc">
                 <div class="col-md-4 doctor-info-upper">
 
-                    <p><a href="<?=  base_url()?>pharmacist/single/<?= $pharmacist->pharmacist_id;?>"><?php echo $pharmacist->pharmacist_name; ?><sup>500 PP</sup></a></p>
+                    <p class="home-profile-title"><a href="<?=  base_url()?>pharmacist/single/<?= $pharmacist->pharmacist_id;?>"><?php echo $pharmacist->pharmacist_name; ?><sup><span class="home-title-rating-value"> 500</span><span class="home-title-rating-pp "> PP</span></sup></a></p>
                     <img src="<?php echo base_url('assets/images/avatar.png');?>" height="90" width="90" alt="Doctor's Image">
                     <ul class="doctor-info-unorder">
 
                         <li><b>Degree*:</b> <?php echo $pharmacist->pharmacist_title; ?></li>
-                        <li><b>Pharmacist Registration No.*:</b> <?php echo $pharmacist->pharmacist_reg_no; ?></li>
+                        <li><b>Pharmacist's Registration No.*:</b> <?php echo $pharmacist->pharmacist_reg_no; ?></li>
 
                     </ul>
                 </div>
@@ -76,20 +76,35 @@
 
 
                     <div class="row pp-doctor">
-                        Click here to see PP details >>
+                        <p><a href="#rat<?= $pharmacist->pharmacist_id;?>" data-toggle="collapse" data-target="#rat<?= $pharmacist->pharmacist_id;?>">See Ratings >></a></p>
                     </div>
+                    <div id="rat<?= $pharmacist->pharmacist_id;?>" class="collapse" >
+                        <div class="row doctor-pp">
+                            <div class="col-md-6">
+                                <a href="#">By(members Name)</a>
+                            </div>
 
-                    <div class="row doctor-pp">
-                        <div class="col-md-6">
-                            <a href="#">By(members Name)</a>
+                            <div class="col-md-6">
+                                <a href="#">PP</a>
+                            </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <a href="#">PP</a>
+                        <div class="row doctor-pp">
+                            <div class="col-md-6">
+                                <a href="#">Admin</a>
+                            </div>
+
+                            <div class="col-md-6">
+                                <a href="#">20</a>
+                            </div>
                         </div>
                     </div>
+
 
                 </div>
+
+
+
             </div>
         <?php } ?>
     </article>

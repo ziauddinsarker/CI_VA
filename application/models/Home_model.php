@@ -16,7 +16,7 @@ class Home_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-	
+
 	//Get All doctors from Doctors table
 	function get_all_doctor(){
 		$this->db->select('*');

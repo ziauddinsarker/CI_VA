@@ -40,7 +40,16 @@ class Location_model extends CI_Model
 		return $query->result();
 		
 	}
-	
+
+	public function get_all_districts(){
+		$this->db->select('district_id, district_name');
+		$this->db->from('district');
+		$this->db->order_by('district_name', 'ASC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
 	public function get_distrct_from_division($dist){
 		$this->db->select('*');		
 		$this->db->from('division');

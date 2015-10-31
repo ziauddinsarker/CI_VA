@@ -1,4 +1,4 @@
-<?php if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'Admin') { ?>
+<?php if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'admin') { ?>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
@@ -108,20 +108,24 @@
                     </div>
                 </div>
             </div>
-<?php }else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'Doctor'){ ?>
+<?php }else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'doctor'){ ?>
 
 <h1>Hello Doctor</h1>
+
+<?php
+} else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'pharmacist'){ ?>
+
+<h1>Hello Pharmacist</h1>
 <p> This page is under construction</p>
 
 <?php
-} else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'Pharmacist'){ ?>
 
-<h1>Hello Doctor</h1>
+}else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'health-business'){ ?>
+
+<h1>Hello Health Business</h1>
 <p> This page is under construction</p>
 
-<?php
-
-}else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'People'){ ?>
+<?php } else if($this->session->userdata('user_id') && $this->session->userdata('user_type') == 'fan'){ ?>
 
 <h1>Hello People</h1>
 <p> This page is under construction</p>
