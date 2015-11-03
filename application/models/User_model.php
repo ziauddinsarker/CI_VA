@@ -9,6 +9,30 @@ class User_model extends CI_Model
 		$this->load->database();
     }
 
+	function getSingleUserId($user_id){
+		$this->db->where('hybridauth_provider_uid',$user_id);
+		$query = $this->db->get('social_users');
+		//return $query->result();
+
+
+		foreach ($query->result_array() as $row)
+		{
+			echo     $row['social_login_id'];
+
+		}
+
+
+		/*if($query->num_rows == 1)
+		{
+			return $query->row();
+		}
+		return false;*/
+	}
+
+
+
+
+
 	function get_all_users(){		
 	  $this->db->select('username,email');
 	  $this->db->from('users');	  	  

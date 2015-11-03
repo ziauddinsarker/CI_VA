@@ -56,7 +56,10 @@ class Admin extends CI_Controller {
         $this->load->view('admin/view_footer');
 		
 	}
-	
+
+	/**
+	 *
+	 */
 	public function user()
 	{ 		
 		$data['users'] = $this->user_model->get_all_users();
@@ -65,9 +68,53 @@ class Admin extends CI_Controller {
         $this->load->view('admin/view_footer');
 		
 	}
-	
+
+	/**
+	 * Get post of individual user in admin panel
+	 */
+	public function getAllPostOfUser(){
+		$user_id = $this->session->userdata('user_id');
+		$data['blogs'] = $this->blog_model->getAllPostOfUser($user_id);
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_blog',$data);
+		$this->load->view('admin/view_footer');
+/////////////////////
+		$user_id = $this->session->userdata('user_id');
+		var_dump($user_id);
+		$social_user_id = $this->user_model->getSingleUserId($user_id);
+		var_dump($social_user_id);
+	}
+
+	public function addNewPost(){
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_add_blog');
+		$this->load->view('admin/view_footer');
+	}
+
+	public function SaveNewPost(){
+		$this->form_validation->set_rules('post-title', 'Post Title', 'required');
+		$this->form_validation->set_rules('post-description', 'Post Description', 'required');
+		$this->form_validation->set_rules('published', 'Published or Not', 'required');
+
+		if ($this->form_validation->run() == FALSE){
+			redirect('admin/addNewPost');
+		}else{
+			$user_id = $this->session->userdata('user_id');
+			$social_user_id = $this->user_model->getSingleUserId($user_id);
+
+			$this->blog_model->addNewPost($social_user_id);
+
+			redirect('admin/getAllPostOfUser');
+		}
+	}
+
+
+	/**
+	 * Get All post from all users and this is only for admin
+	 */
 	public function blog()
-	{ 		
+	{
+
 		$data['blogs'] = $this->blog_model->getAllPosts();
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_blog',$data);
@@ -86,7 +133,6 @@ class Admin extends CI_Controller {
 		if($user_type == 'doctor'){
 			$this->data['profiles'] = $this->profile_model->get_single_doctor($user_id, $user_type);
 
-			var_dump($this->data['profiles']);
 
 		//If user is Pharmacist
 		}elseif($user_type == 'pharmacist'){

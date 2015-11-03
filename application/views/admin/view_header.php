@@ -86,7 +86,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i>Post Blog</a>
+                            <a href="<?php echo base_url("admin/getAllPostOfUser")?>"><i class="fa fa-wrench fa-fw"></i>Post Blog</a>
                         </li>
 						 <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Post Event</a>

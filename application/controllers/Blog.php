@@ -46,10 +46,6 @@ class Blog extends CI_Controller {
     
     function new_post()//Creating new post page
     {
-        if(!$this->check_permissions('author'))//when the user is not an andmin and author
-        {
-            redirect(base_url().'users/login');
-        }
         if($this->input->post())
         {
             $data = array(

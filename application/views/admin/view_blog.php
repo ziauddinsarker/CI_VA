@@ -28,7 +28,7 @@
 				
 				</table>
 								
-				<p><a href="new.php">Add a new Blog</a></p>
+				<p><a href="<?php echo base_url("admin/addNewPost") ?>">Add a new Blog</a></p>
                     
                     <!-- /.panel -->
                 </div>

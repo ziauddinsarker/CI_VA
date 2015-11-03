@@ -75,8 +75,8 @@
 			   <?php
 				}else {
 					//if no user is loged in, then show the loged in button
-					echo '<li><a href="login/social_login/Facebook"><img src="' . base_url("assets/images/fb_login.png") .'" alt="Facebook" width="150"/></a></li>';
-					echo '<li><a href="login/social_login/Google"><img src="' . base_url("assets/images/google_login.png") .'" alt="Facebook" width="150"/></a></li>';
+					echo '<li><a href="'. base_url("login/social_login/Facebook") . '"><img src="' . base_url("assets/images/fb_login.png") .'" alt="Facebook" width="150"/></a></li>';
+					echo '<li><a href="'. base_url("login/social_login/Google") . '"><img src="' . base_url("assets/images/google_login.png") .'" alt="Facebook" width="150"/></a></li>';
 				}
 				?>
 			</ul>

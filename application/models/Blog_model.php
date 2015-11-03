@@ -2,7 +2,46 @@
 
 class Blog_model extends CI_Model
 {
-	
+
+    /**
+     * @param $social_uid
+     * @return mixed
+     */
+    function getAllPostOfUser($social_uid){
+        $this->db->select('post_title, post');
+        $this->db->from('posts');
+        $this->db->join('social_users','social_users.social_login_id = posts.social_user_id');
+        $this->db->where('hybridauth_provider_uid',$social_uid);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    /**
+     * Add Post
+     */
+    function addNewPost($social_login_id) {
+        $title = $this->input->post('post-title');
+        $description = $this->input->post('post-description');
+        $publish = $this->input->post('published');
+        $data = array(
+            'post_title' => $title,
+            'post' => $description,
+            'active' => $publish,
+            'social_user_id' => $social_login_id
+        );
+
+        $this->db->insert('posts', $data);
+    }
+
+
+
+
+
+
+
+
+
+
 	function getAllPosts(){
 		$this->db->select();
         $this->db->from('posts');
