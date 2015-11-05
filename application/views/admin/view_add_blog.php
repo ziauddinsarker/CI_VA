@@ -10,6 +10,7 @@
                 <div class="col-lg-12">
                     <?php echo form_open('admin/SaveNewPost', 'role="form"'); ?>
                         <div class="form-group">
+                            <input type="hidden" class="form-control" name="social-usr-id" id="social-usr-id" value="<?php foreach ($sui as $so): ?><?php echo $so['social_login_id']?><?php endforeach; ?>">
                             <label for="post-title">Title:</label>
                             <input type="text" class="form-control" name="post-title" id="post-title">
                         </div>

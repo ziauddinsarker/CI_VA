@@ -78,20 +78,18 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/view_header');
 		$this->load->view('admin/view_blog',$data);
 		$this->load->view('admin/view_footer');
-/////////////////////
-		$user_id = $this->session->userdata('user_id');
-		var_dump($user_id);
-		$social_user_id = $this->user_model->getSingleUserId($user_id);
-		var_dump($social_user_id);
 	}
 
 	public function addNewPost(){
+		$user_id = $this->session->userdata('user_id');
+		$data['sui'] = $this->user_model->getSingleUserId($user_id);
 		$this->load->view('admin/view_header');
-		$this->load->view('admin/view_add_blog');
+		$this->load->view('admin/view_add_blog',$data);
 		$this->load->view('admin/view_footer');
 	}
 
 	public function SaveNewPost(){
+		$this->form_validation->set_rules('social-usr-id', 'User Id', 'required');
 		$this->form_validation->set_rules('post-title', 'Post Title', 'required');
 		$this->form_validation->set_rules('post-description', 'Post Description', 'required');
 		$this->form_validation->set_rules('published', 'Published or Not', 'required');
@@ -99,10 +97,7 @@ class Admin extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			redirect('admin/addNewPost');
 		}else{
-			$user_id = $this->session->userdata('user_id');
-			$social_user_id = $this->user_model->getSingleUserId($user_id);
-
-			$this->blog_model->addNewPost($social_user_id);
+			$this->blog_model->addNewPost();
 
 			redirect('admin/getAllPostOfUser');
 		}
@@ -114,14 +109,56 @@ class Admin extends CI_Controller {
 	 */
 	public function blog()
 	{
-
 		$data['blogs'] = $this->blog_model->getAllPosts();
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_blog',$data);
         $this->load->view('admin/view_footer');
 		
 	}
-	
+
+	public function editPost(){
+		$post_id = $this->uri->segment(3);
+		if ($post_id == NULL) {
+			redirect('admin/getAllPostOfUser');
+		}
+		$dt = $this->blog_model->editPost($post_id);
+		var_dump($dt);
+
+		$data['post_id'] = $post_id;
+		$data['post_title'] = $dt->post_title;
+		$data['post_desc'] = $dt->post;
+		$data['active_or_not'] = $dt->active;
+
+
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_edit_blog',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	function updatePost() {
+
+		if ($this->input->post('updatepost')) {
+			$postId = $this->input->post('post-id');
+			$this->blog_model->updatePost($postId);
+			redirect('admin/getAllPostOfUser');
+		} else{
+			$id = $this->input->post('post-id');
+			redirect('admin/editPost/'. $id);
+		}
+	}
+
+	/**
+	 *
+	 */
+	function deletePost() {
+		$u = $this->uri->segment(3);
+		$this->blog_model->deletePost($u);
+		redirect('admin/getAllPostOfUser');
+	}
+
+
+
+
 	public function profile(){
 		//Get user type from session
 		$user_type = $this->session->userdata('user_type');

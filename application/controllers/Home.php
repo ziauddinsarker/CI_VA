@@ -29,7 +29,7 @@ class Home extends CI_Controller {
 		$this->load->model('search_model');
 		//$this->load->model('healthcare_model');
 		$this->load->model('shop_model');
-		
+
 		//Get Blog Data
 		//$this->data['blogs'] = $this->blog_model->getPosts(); // calling Blog model method getPosts()
 		$this->data['blogs'] = $this->blog_model->get_all_posts();		
@@ -412,11 +412,7 @@ class Home extends CI_Controller {
 	//Add New post from homepage
 	function new_post()//Creating new post page
     {
-        if(!$this->check_permissions('author'))//when the user is not an admin and author
-        {
-            redirect(base_url().'users/login');
-        }
-        if($this->input->post())
+		if($this->input->post())
         {
             $data = array(
                 'post_title' => $this->input->post('post_title'),

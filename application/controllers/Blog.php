@@ -9,6 +9,7 @@ class Blog extends CI_Controller {
 		$this->load->database(); // load database	
         $this->load->model('blog_model');
     }
+
     function index($start = 0)//index page
     {
         $data['posts'] = $this->blog_model->get_posts(5, $start);

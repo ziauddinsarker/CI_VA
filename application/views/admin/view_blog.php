@@ -15,13 +15,14 @@
 					<th>Blog Description</th>	
 				 </tr> 
 				</thead>
-				<tbody>		
+				<tbody>
+                <?php // admin/getAllPostOfUser ?>
 				<?php foreach($blogs as $blog){?>
 					<tr class="odd gradeX">					
 						<td><?php echo $blog->post_title;?></td>
 						<td><?php echo $blog->post;?></td>
 											
-						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+						<td><a href="<?php echo base_url("admin/editPost"). "/". $blog->post_id; ?>">Edit</a> | <a href="<?php echo base_url("admin/deletePost"). "/". $blog->post_id; ?>">Delete</a></td>
 					</tr>
 				<?php }?> 
 				</tbody>

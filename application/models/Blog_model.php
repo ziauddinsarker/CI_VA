@@ -8,7 +8,7 @@ class Blog_model extends CI_Model
      * @return mixed
      */
     function getAllPostOfUser($social_uid){
-        $this->db->select('post_title, post');
+        $this->db->select('post_id,post_title, post');
         $this->db->from('posts');
         $this->db->join('social_users','social_users.social_login_id = posts.social_user_id');
         $this->db->where('hybridauth_provider_uid',$social_uid);
@@ -19,18 +19,47 @@ class Blog_model extends CI_Model
     /**
      * Add Post
      */
-    function addNewPost($social_login_id) {
+    function addNewPost() {
+        $social_user_id = $this->input->post('social-usr-id');
         $title = $this->input->post('post-title');
         $description = $this->input->post('post-description');
         $publish = $this->input->post('published');
         $data = array(
+            'social_user_id' => $social_user_id,
             'post_title' => $title,
             'post' => $description,
-            'active' => $publish,
-            'social_user_id' => $social_login_id
+            'active' => $publish
         );
 
         $this->db->insert('posts', $data);
+    }
+
+	function getAllPosts(){
+		$this->db->select();
+        $this->db->from('posts');
+		$query = $this->db->get();
+        return $query->result();
+	}
+
+    function editPost($post_id){
+        $data = $this->db->get_where('posts', array('post_id' => $post_id))->row();
+        return $data;
+    }
+
+    function updatePost($id) {
+        $title = $this->input->post('post-title');
+        $description = $this->input->post('post-description');
+        $data = array(
+            'post_title' => $title,
+            'post' => $description
+        );
+        $this->db->where('post_id', $id);
+        $this->db->update('posts', $data);
+    }
+
+    function deletePost($post_id) {
+        $this->db->delete('posts', array('post_id' => $post_id));
+        return;
     }
 
 
@@ -39,15 +68,6 @@ class Blog_model extends CI_Model
 
 
 
-
-
-
-	function getAllPosts(){
-		$this->db->select();
-        $this->db->from('posts');
-		$query = $this->db->get();
-        return $query->result();
-	}
 	
 	
     function get_posts($number = 10, $start = 0)

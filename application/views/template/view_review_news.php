@@ -73,6 +73,8 @@
 
 	<article class="row">
 		<div class="col-md-12">
+
+		<?php //From Admin Blog ?>
 		<?php foreach($blogs as $blog){?>
 			<div class="up-doc">
 				<div class="doctor-info-upper">
@@ -115,12 +117,6 @@
 					</div>
 				</div>
 			</div>
-			<?php if($this->session->userdata('user_id')) { ?>
-				<p>
-					<a href="<?=  base_url()?>blog/editpost/<?= $blog->post_id;?>"><span class="glyphicon glyphicon-edit" title="Edit post"></span></a> |
-					<a href="<?=  base_url()?>blog/deletepost/<?= $blog->post_id;?>"><span style="color:#f77;" class="glyphicon glyphicon-remove-circle" title="Delete post"></span></a>
-				</p>
-			<?php } ?>
 		<?php }?>
 		</div>
 	</article>
