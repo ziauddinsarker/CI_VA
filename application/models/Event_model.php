@@ -12,7 +12,7 @@ class Event_model extends CI_Model{
 	
 	//GEta All events 
 	function getEvents(){
-	  $this->db->select("events_id,events_name,events_time,events_address,events_phone,events_contact_time,events_email,username");
+	  $this->db->select("events_id,events_name,events_time,events_date,events_address,events_phone,events_contact_time,events_email,username");
 	  $this->db->from('events');
 	  $this->db->join('users','events.events_author = users.user_id');
 	  $query = $this->db->get();

@@ -13,6 +13,11 @@ class Admin extends CI_Controller {
 		$this->load->model('doctor_model');
 		$this->load->model('user_model');
 		$this->load->model('blog_model');
+		$this->load->model('discount_model');
+
+		$this->load->model('event_model');
+
+		$this->load->model('events_model');
 		$this->load->model('profile_model');
 		$this->load->library('HybridAuthLib');
     }
@@ -68,7 +73,9 @@ class Admin extends CI_Controller {
         $this->load->view('admin/view_footer');
 		
 	}
-
+	/************************************************/
+	/*****************Blog***********************/
+	/************************************************/
 	/**
 	 * Get post of individual user in admin panel
 	 */
@@ -122,7 +129,6 @@ class Admin extends CI_Controller {
 			redirect('admin/getAllPostOfUser');
 		}
 		$dt = $this->blog_model->editPost($post_id);
-		var_dump($dt);
 
 		$data['post_id'] = $post_id;
 		$data['post_title'] = $dt->post_title;
@@ -155,6 +161,178 @@ class Admin extends CI_Controller {
 		$this->blog_model->deletePost($u);
 		redirect('admin/getAllPostOfUser');
 	}
+
+
+	/************************************************/
+	/*****************Discount***********************/
+	/************************************************/
+	public function getAllDiscountOfUser(){
+		$user_id = $this->session->userdata('user_id');
+		$data['discounts'] = $this->discount_model->getAllDiscountOfUser($user_id);
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_discount',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	public function addNewDiscount(){
+		$user_id = $this->session->userdata('user_id');
+		$data['sui'] = $this->user_model->getSingleUserId($user_id);
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_add_discount',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	public function SaveNewDiscount(){
+		$this->form_validation->set_rules('social-usr-id', 'User Id', 'required');
+		$this->form_validation->set_rules('discount-title', 'Discount Title', 'required');
+		$this->form_validation->set_rules('discount-area', 'Discount Area', 'required');
+		$this->form_validation->set_rules('discount-on', 'Discount On', 'required');
+		$this->form_validation->set_rules('discount-duration', 'Discount duration', 'required');
+		$this->form_validation->set_rules('published', 'Published or Not', 'required');
+
+		if ($this->form_validation->run() == FALSE){
+			redirect('admin/addNewDiscount');
+		}else{
+			$this->discount_model->addNewdiscount();
+
+			redirect('admin/getAllDiscountOfUser');
+		}
+	}
+
+
+	public function editDiscount(){
+		$discount_id = $this->uri->segment(3);
+		if ($discount_id == NULL) {
+			redirect('admin/getAllDiscountOfUser');
+		}
+		$dt = $this->discount_model->editDiscount($discount_id);
+
+
+		$data['discount_id'] = $discount_id;
+		$data['discount_name'] = $dt->discount_name;
+		$data['discount_area'] = $dt->discount_area;
+		$data['discount_on'] = $dt->discount_on;
+		$data['discount_duration'] = $dt->discount_duration;
+		$data['active_or_not'] = $dt->active;
+
+
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_edit_discount',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	function updateDiscount() {
+
+		if ($this->input->post('updatediscount')) {
+			$discountId = $this->input->post('discount-id');
+			$this->discount_model->updatePost($discountId);
+			redirect('admin/getAllDiscountOfUser');
+		} else{
+			$id = $this->input->post('discount-id');
+			redirect('admin/editDiscount/'. $id);
+		}
+	}
+
+	/**
+	 *
+	 */
+	function deleteDiscount() {
+		$u = $this->uri->segment(3);
+		$this->discount_model->deletePost($u);
+		redirect('admin/getAllDiscountOfUser');
+	}
+
+	/************************************************/
+	/*****************Event***********************/
+	/************************************************/
+	public function getAllEventOfUser(){
+		$user_id = $this->session->userdata('user_id');
+		$data['events'] = $this->events_model->getAllEventOfUser($user_id);
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_event',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	public function addNewEvent(){
+		$user_id = $this->session->userdata('user_id');
+		$data['sui'] = $this->user_model->getSingleUserId($user_id);
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_add_event',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	public function SaveNewEvent(){
+		$this->form_validation->set_rules('social-usr-id', 'User Id', 'required');
+		$this->form_validation->set_rules('event-title', 'event Title', 'required');
+		$this->form_validation->set_rules('event-area', 'event Area', 'required');
+		$this->form_validation->set_rules('event-on', 'event On', 'required');
+		$this->form_validation->set_rules('event-date', 'event duration', 'required');
+		$this->form_validation->set_rules('published', 'Published or Not', 'required');
+
+		if ($this->form_validation->run() == FALSE){
+			redirect('admin/addNewEvent');
+		}else{
+			$this->events_model->addNewEvent();
+
+			redirect('admin/getAllEventOfUser');
+		}
+	}
+
+
+	public function editEvent(){
+		$event_id = $this->uri->segment(3);
+		if ($event_id == NULL) {
+			redirect('admin/getAllEventOfUser');
+		}
+		$dt = $this->events_model->editEvent($event_id);
+
+
+		$data['event_id'] = $event_id;
+		$data['event_name'] = $dt->events_name;
+		$data['event_area'] = $dt->events_area;
+		$data['event_on'] = $dt->events_on;
+		$data['event_date'] = $dt->events_time;
+		$data['active_or_not'] = $dt->events_active;
+
+
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_edit_event',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	function updateEvent() {
+
+		if ($this->input->post('updateevent')) {
+			$discountId = $this->input->post('discount-id');
+			$this->discount_model->updatePost($discountId);
+			redirect('admin/getAllDiscountOfUser');
+		} else{
+			$id = $this->input->post('discount-id');
+			redirect('admin/editDiscount/'. $id);
+		}
+	}
+
+	/**
+	 *
+	 */
+	function deleteEvent() {
+		$u = $this->uri->segment(3);
+		$this->discount_model->deletePost($u);
+		redirect('admin/getAllDiscountOfUser');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -103,10 +103,17 @@ class Home_model extends CI_Model
 
 	}
 
+	//Get Discount
+	public function getAllDiscount(){
+		$this->db->select('*');
+		$this->db->from('discount');
+		$this->db->order_by('discount_time_start','ASC');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 
-
-	//Get Discount 
+	/*//Get Discount
 	public function getAllDiscount(){		
 	  $this->db->select('discount_id,discount_name,discount_time_start');
 	  $this->db->from('company_discount');
@@ -115,7 +122,7 @@ class Home_model extends CI_Model
 	  $this->db->order_by('discount_time_start','ASC');
 	  $query = $this->db->get();
 	  return $query->result();
-	} 
+	} */
 	
 	public function get_key($key){		
 		$this->db->select('brand_name,brand_strength_name,brand_dosage_form_name');

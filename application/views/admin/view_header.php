@@ -61,12 +61,12 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="admin/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?php echo base_url("admin/profile")?>"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="users/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url("users/logout")?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -82,14 +82,17 @@
                     <ul class="nav" id="side-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url("admin")?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
                         <li>
                             <a href="<?php echo base_url("admin/getAllPostOfUser")?>"><i class="fa fa-wrench fa-fw"></i>Post Blog</a>
                         </li>
 						 <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Post Event</a>
+                            <a href="<?php echo base_url("admin/getAllEventOfUser")?>"><i class="fa fa-bar-chart-o fa-fw"></i>Post Event</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url("admin/getAllDiscountOfUser")?>"><i class="fa fa-bar-chart-o fa-fw"></i>Post Discount</a>
                         </li>
 
                     </ul>
