@@ -17,6 +17,23 @@ class Events_model extends CI_Model
         return $query->result();
     }
 
+    //GEta All events
+    function getEvents(){
+        $this->db->select("events_id,events_name,events_time,events_date,events_address,events_phone,events_contact_time,events_email");
+        $this->db->from('events');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+
+
+    function insert_event($data)
+    {
+        $this->db->insert('events',$data);
+        return $this->db->insert_id();
+    }
+
+
     /**
      * Add Post
      */

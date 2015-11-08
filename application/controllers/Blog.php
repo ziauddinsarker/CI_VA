@@ -40,9 +40,9 @@ class Blog extends CI_Controller {
         $data['comments'] = $this->model_comment->get_comment($post_id);    
         $data['post'] = $this->blog_model->get_post($post_id);
         
-        $this->load->view('template/view_header');
+        $this->load->view('template/view_blank_header');
         $this->load->view('view_single_post',$data);
-        $this->load->view('template/view_footer');
+        $this->load->view('template/view_blank_footer');
     }
     
     function new_post()//Creating new post page

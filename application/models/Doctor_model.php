@@ -8,6 +8,70 @@ class Doctor_model extends CI_Model
         parent::__construct();
     }
 
+
+	/**
+	 * @param $social_uid
+	 * @return mixed
+	 */
+/*	function getSingleDoctorInfo($social_uid){
+		$this->db->select('*');
+		$this->db->from('doctors');
+		$this->db->join('doctors_category','doctors.doctor_specialist = doctors_category.doctor_category_id');
+		$this->db->join('doctors_chamber','doctors.doctor_chamber = doctors_chamber.doctors_chambers_id');
+		$this->db->join('doctors_chamber_address','doctors_chamber.doctors_chambers_address = doctors_chamber_address.doctors_chamber_address_id');
+		$this->db->join('district','doctors.doctor_district = district.district_id');
+		$this->db->join('user_doc','user_doc.doctor_id = doctors.doctor_id');
+		$this->db->join('social_users','user_doc.user_id = social_users.social_login_id');
+		$this->db->where('hybridauth_provider_uid',$social_uid);
+		$query = $this->db->get();
+		return $query->result();
+	}*/
+
+	function getSingleDoctorInfo($social_uid){
+		$this->db->select('*');
+		$this->db->from('doctors');
+		$this->db->join('user_doc','user_doc.doctor_id = doctors.doctor_id');
+		$this->db->join('social_users','user_doc.user_id = social_users.social_login_id');
+		$this->db->where('hybridauth_provider_uid',$social_uid);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function updateDoctor($id )
+	{
+		$doctor_name = $this->input->post('doctor-name');
+		$doctor_email = $this->input->post('doctor-email');
+		$doctor_title = $this->input->post('doctor-title');
+		$doctor_address = $this->input->post('doctor-address');
+		$doctor_phone = $this->input->post('doctor-phone');
+		$doctor_reg_no = $this->input->post('doctor-bmdc-no');
+		$doctor_gender = $this->input->post('doctor-gender');
+		$doctor_website = $this->input->post('doctor-websitr');
+
+		$doctor_specialist = $this->input->post('doctor-specility');
+		$doctor_district = $this->input->post('doctor-dist');
+		$doctor_chamber = $this->input->post('doctor-dist');
+
+		$data = array(
+			'doctor_name' => $doctor_name,
+			'doctor_email' => $doctor_email,
+			'doctor_title' =>  $doctor_title,
+			'doctor_address' => $doctor_address,
+			'doctor_phone' => $doctor_phone,
+			'doctor_bmdc_no' => $doctor_reg_no,
+			'doctor_gender' => $doctor_gender,
+			'doctor_website' => $doctor_website,
+			'doctor_specialist' => $doctor_specialist,
+			'doctor_district' => $doctor_district,
+			'doctor_chamber' => $doctor_chamber,
+		);
+		$this->db->where('doctor_id', $id);
+		$this->db->update('doctors', $data);
+	}
+
+
+
+
     //get the username & password from tbl_usrs
     //Get All Posts
 	function getDoctors(){

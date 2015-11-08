@@ -32,6 +32,39 @@ class Profile_model extends CI_Model{
         return $query->result();
     }
 
+    function get_single_healthcare($user_id, $user_type){
+        $this->db->select('*');
+        $this->db->from('health_business');
+        $this->db->join('user_health_business','user_health_business.health_business_id = health_business.health_business_id');
+        $this->db->join('social_users','user_health_business.user_id = social_users.social_login_id');
+        $this->db->where('social_users.hybridauth_provider_uid',$user_id);
+        $this->db->where('social_users.social_login_user_type',$user_type);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function get_single_pharmacist($user_id, $user_type){
+        $this->db->select('*');
+        $this->db->from('pharmacist');
+        $this->db->join('user_pharma','user_pharma.pharmacist_id = pharmacist.pharmacist_id');
+        $this->db->join('social_users','user_pharma.user_id = social_users.social_login_id');
+        $this->db->where('social_users.hybridauth_provider_uid',$user_id);
+        $this->db->where('social_users.social_login_user_type',$user_type);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function get_single_fan($user_id, $user_type){
+        $this->db->select('*');
+        $this->db->from('fan');
+        $this->db->join('user_fan','user_fan.fan_id = fan.fan_id');
+        $this->db->join('social_users','user_fan.user_id = social_users.social_login_id');
+        $this->db->where('social_users.hybridauth_provider_uid',$user_id);
+        $this->db->where('social_users.social_login_user_type',$user_type);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
 
 

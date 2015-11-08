@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 
 
 		$this->load->model('blog_model'); // load Blog model
-		$this->load->model('event_model'); // load Event model
+		$this->load->model('events_model'); // load Event model
 		$this->load->model('company_model'); // load Company model
 		$this->load->model('doctor_model'); // load Doctor model
 		$this->load->model('pharmacist_model'); // load Doctor model
@@ -35,7 +35,7 @@ class Home extends CI_Controller {
 		$this->data['blogs'] = $this->blog_model->get_all_posts();		
 		
 		//Get Events Data
-		$this->data['events'] = $this->event_model->getEvents(); // calling Event model method getPosts()
+		$this->data['events'] = $this->events_model->getEvents(); // calling Event model method getPosts()
 
 		//Get Healthcare Data
 		$this->data['company_category_first'] = $this->company_model->getCompanyCategory(4,0); // calling Company model method getPosts()
@@ -43,7 +43,7 @@ class Home extends CI_Controller {
 		$this->data['company_category_last'] = $this->company_model->getCompanyCategory(4,8); // calling Company model method getPosts()
 
 		//Get Doctors Rating
-		$this->data['doctors_rating'] = $this->doctor_model->getDoctorsRating(); // calling Blog model method getPosts()
+		//$this->data['doctors_rating'] = $this->doctor_model->getDoctorsRating(); // calling Blog model method getPosts()
 		//var_dump($this->data['doctors_rating']);
 		
 		//Get All Districts
@@ -58,7 +58,7 @@ class Home extends CI_Controller {
 		$this->data['doctors_category_22_2'] = $this->home_model->getDoctorsCategoryOnly(21,22);
 
 
-		$this->data['doctors_category_only'] = $this->home_model->getDoctorsCategoryOnly();
+		//$this->data['doctors_category_only'] = $this->home_model->getDoctorsCategoryOnly();
 		
 		$this->data['get_top_ten_doctor'] = $this->home_model->getTopTenDoctor();	
 		//$this->data['get_rating_for_doctor'] = $this->doctor_model->get_rating_for_doctor();	
@@ -67,7 +67,7 @@ class Home extends CI_Controller {
 		$this->data['all_pharmacist'] = $this->pharmacist_model->getPharmacist();
 
 		//Get All Doctors Data
-		$this->data['all_doctors'] = $this->home_model->get_all_doctor();
+		//$this->data['all_doctors'] = $this->home_model->get_all_doctor();
 		//var_dump($this->data['all_doctors']);
 		
 		//Get All Discount

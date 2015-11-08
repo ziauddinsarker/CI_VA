@@ -67,18 +67,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="https://twitter.com/BhaloAchee" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
 
                         <?php
-                        if($this->session->userdata('user_id')&& $this->session->userdata('user_type'))//if user is loged in, display comment box
-                        {
+                        $user_type = $this->session->userdata('user_type');
+                        if($user_type == ('doctor' || 'pharmacist' || 'health-business' || 'fan')){
                             ?>
-                            <!-- <li><a class="cd-signin btn btn-primary" href="<?php  //base_url()?>users/logout">Logout</a></li>-->
-
-                                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-                                    <li><a href="<?php base_url() ?>admin"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="<?php base_url() ?>users/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="<?php base_url() ?>admin"><i class="fa fa-user fa-2x"></i></a></li>
 
                             <?php
                         }else {
+                            //if no user is loged in, then show the loged in button
+                            echo '<li><a href="'. base_url("login/social_login/Facebook") . '"><img src="' . base_url("assets/images/fb_login.png") .'" alt="Facebook" width="150"/></a></li>';
+                            echo '<li><a href="'. base_url("login/social_login/Google") . '"><img src="' . base_url("assets/images/google_login.png") .'" alt="Facebook" width="150"/></a></li>';
                         }
                         ?>
                     </ul>

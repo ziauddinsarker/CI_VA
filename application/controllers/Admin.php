@@ -11,11 +11,12 @@ class Admin extends CI_Controller {
 		$this->load->model('brand_model');
 		$this->load->model('shop_model');
 		$this->load->model('doctor_model');
+		$this->load->model('pharmacist_model');
 		$this->load->model('user_model');
 		$this->load->model('blog_model');
 		$this->load->model('discount_model');
 
-		$this->load->model('event_model');
+		//$this->load->model('event_model');
 
 		$this->load->model('events_model');
 		$this->load->model('profile_model');
@@ -25,8 +26,15 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		if((Hybrid_Auth::getConnectedProviders())){
+
+			$user_id = $this->session->userdata('user_id');
+			$this->data['singleDoctor'] = $this->doctor_model->getSingleDoctorInfo($user_id);
+			$this->data['singlePharmacist'] = $this->pharmacist_model->getSinglePharmacistInfo($user_id);
+			$this->data['specility'] = $this->user_model->get_doctors_specility();
+			$this->data['district'] = $this->user_model->get_district();
+
 			$this->load->view('admin/view_header');
-			$this->load->view('admin/view_admin');
+			$this->load->view('admin/view_admin',$this->data);
 			$this->load->view('admin/view_footer');
 		}else{
 			redirect(base_url('login'));
@@ -311,6 +319,37 @@ class Admin extends CI_Controller {
 			redirect('admin/editDiscount/'. $id);
 		}
 	}
+	/*************************************************/
+	/******************Doctor*********************/
+	/*************************************************/
+	function updateDocInfo() {
+		if ($this->input->post('updatedoctor')) {
+			$doctorId = $this->input->post('doctor-id');
+
+			$this->doctor_model->updateDoctor($doctorId);
+
+			redirect('admin');
+		} else{
+			redirect('admin');
+		}
+	}
+
+	/*************************************************/
+	/******************Pharmacist*********************/
+	/*************************************************/
+	function updatePharmaInfo() {
+		if ($this->input->post('updatepharma')) {
+			$pharmaId = $this->input->post('pharma-id');
+			$this->pharmacist_model->updatePharma($pharmaId);
+			redirect('admin');
+		} else{
+			redirect('admin');
+		}
+	}
+
+
+
+
 
 	/**
 	 *
@@ -322,21 +361,9 @@ class Admin extends CI_Controller {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	/**
+	 * General Profile of User
+	 */
 	public function profile(){
 		//Get user type from session
 		$user_type = $this->session->userdata('user_type');
@@ -351,11 +378,15 @@ class Admin extends CI_Controller {
 
 		//If user is Pharmacist
 		}elseif($user_type == 'pharmacist'){
-			$data['profiles'] = $this->profile_model->get_single_pharmacist();
+			$this->data['profiles'] = $this->profile_model->get_single_pharmacist($user_id, $user_type);
 
 		//If user is health-business
 		}elseif($user_type == 'health-business'){
-			$data['profiles'] = $this->profile_model->get_single_healthcare();
+			$this->data['profiles'] = $this->profile_model->get_single_healthcare($user_id, $user_type);
+
+		//If user is health-business
+		}elseif($user_type == 'fan'){
+			$this->data['profiles'] = $this->profile_model->get_single_fan($user_id, $user_type);
 		}
 
 		$this->load->view('admin/view_header');

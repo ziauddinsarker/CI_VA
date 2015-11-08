@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 		$this->load->model('login_model');
 
 		$this->load->model('blog_model'); // load Blog model
-		$this->load->model('event_model'); // load Event model
+		$this->load->model('events_model'); // load Event model
 		$this->load->model('company_model'); // load Company model
 		$this->load->model('doctor_model'); // load Doctor model
 		$this->load->model('user_model'); // load Users model
@@ -21,12 +21,12 @@ class Login extends CI_Controller {
     }
 
 	//Index Function
-	public function index()		
+/*	public function index()
 	{
 		$this->load->view('template/view_blank_header');
 		$this->load->view('user/view_login',$this->data);
 		$this->load->view('template/view_footer',$this->data);
-	}
+	}*/
 	
 	
 	
