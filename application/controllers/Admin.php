@@ -29,7 +29,9 @@ class Admin extends CI_Controller {
 
 			$user_id = $this->session->userdata('user_id');
 			$this->data['singleDoctor'] = $this->doctor_model->getSingleDoctorInfo($user_id);
+			//var_dump($this->data['singleDoctor']);
 			$this->data['singlePharmacist'] = $this->pharmacist_model->getSinglePharmacistInfo($user_id);
+
 			$this->data['specility'] = $this->user_model->get_doctors_specility();
 			$this->data['district'] = $this->user_model->get_district();
 

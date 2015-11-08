@@ -121,6 +121,7 @@
                 <div class="form-group">
                     <label for="doctor-name" class="control-label col-xs-2">Name:</label>
                     <div class="col-xs-10">
+                        <input type="hidden" name="doctor-id" value="<?php echo $docinfo->doctor_id;?>">
                         <input type="text" class="form-control" name="doctor-name" value="<?php echo $docinfo->doctor_name;?>" id="doctor-name">
                     </div>
                 </div>
@@ -136,7 +137,7 @@
                     <div class="col-xs-10">
                     <?php
                         $attributes = 'class="form-control" id="doctor-specility"';
-                        echo form_dropdown('form-specility',$specility,set_value('specility'),$attributes);
+                        echo form_dropdown('doctor-specility',$specility,set_value('specility'),$attributes);
                     ?>
                         </div>
                 </div>
@@ -196,13 +197,14 @@
 
                             <label for="doctor-chamber-1" class="control-label col-xs-2">Address:</label>
                             <div class="col-xs-10">
-                                <textarea class="form-control" rows="5" id="doctor-chamber-1" name="doctor-chamber-1"><?php echo $docinfo->doctors_chamber_address_1;?></textarea>
+                               <textarea class="form-control" rows="5" id="doctor-chamber-1" name="doctor-chamber-1"><?php echo $docinfo->doctors_chamber_address_1;?></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="doctor-chamber-time-11" class="control-label col-xs-2">Saturday:</label>
                             <div class="col-xs-10">
+
                                 <input type="text" class="form-control" name="doctor-chamber-time-11" value="<?php echo $docinfo->doctors_chambers_time_11;?>" id="doctor-chamber-time-11">
                             </div>
                         </div>
@@ -310,7 +312,10 @@
                 </div>
 
             <div class="row">
-            <input type="hidden" name="doctor-id" value="<?php echo $docinfo->doctor_id;?>">
+                <input type="hidden" name="doctor-id" value="<?php echo $docinfo->doctor_id;?>">
+                <input type="hidden" name="doctor-chambers-address-id" value="<?php echo $docinfo->doctors_chamber_address_id;?>">
+                <input type="hidden" name="doctor-chambers-id" value="<?php echo $docinfo->doctors_chambers_id;?>">
+
                 <button type="submit" name="updatedoctor" class="btn btn-default" value="updatedoctor">Update</button>
                 <?php echo form_close(); ?>
             </div>

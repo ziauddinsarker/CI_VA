@@ -184,7 +184,7 @@ class Login extends CI_Controller {
 					'doctor_title' => $this->input->post('form-title'),
 					'doctor_bmdc_no' => $this->input->post('form-bmdc'),
 					'doctor_district' => $this->input->post('form-dist'),
-					'doctor_specialist' => $this->input->post('form-specility'),
+					'doctor_category' => $this->input->post('form-specility'),
 				);
 
 				$this->db->insert('doctors', $doctor_data);
@@ -197,6 +197,23 @@ class Login extends CI_Controller {
 
 				$this->db->insert('user_doc', $user_doctor_data);
 
+
+				//Doctors chambers address
+				$this->db->set('doctors_chamber_address_id');
+				$this->db->insert('doctors_chamber_address');
+				$doctor_info_chamber_address = $this->db->insert_id();
+
+				//Doctors chambers
+				$this->db->set('doctors_chambers_address',$doctor_info_chamber_address);
+				$this->db->insert('doctors_chamber');
+				$doctor_info_chamber = $this->db->insert_id();
+
+				$doctor_all_info = array(
+					'doctor_info_doctor' => $doctor_id,
+					'doctor_info_chamber' => $doctor_info_chamber,
+				);
+
+				$this->db->insert('doctor_all_info', $doctor_all_info);
 
 
 				$this->session->set_userdata('user_id', $this->input->post('provider-id'));
