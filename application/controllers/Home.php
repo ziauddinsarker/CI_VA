@@ -58,7 +58,7 @@ class Home extends CI_Controller {
 		$this->data['doctors_category_22_2'] = $this->home_model->getDoctorsCategoryOnly(21,22);
 
 
-		//$this->data['doctors_category_only'] = $this->home_model->getDoctorsCategoryOnly();
+		$this->data['doctors_category_only'] = $this->home_model->getDoctorsCategoryOnly();
 		
 		$this->data['get_top_ten_doctor'] = $this->home_model->getTopTenDoctor();	
 		//$this->data['get_rating_for_doctor'] = $this->doctor_model->get_rating_for_doctor();	
@@ -85,14 +85,16 @@ class Home extends CI_Controller {
 		$this->data['rangpur_division'] = $this->home_model->get_district_by_division('Rangpur');
 		$this->data['sylhet_division'] = $this->home_model->get_district_by_division('Sylhet');
 
-		 
-    }
+
+		$u_id = $this->session->userdata('user_id');
+		$this->data['sui'] = $this->user_model->getSingleUserId($u_id);
+
+	}
 
 
 	//Index Function
 	public function index()	
 	{
-
 		 	$this->load->view('template/view_header', $this->data);
 			$this->load->view('template/view_about', $this->data);
 			$this->load->view('template/view_top_list', $this->data);
@@ -414,7 +416,9 @@ class Home extends CI_Controller {
     {
 		if($this->input->post())
         {
+
             $data = array(
+                'social_user_id' => $this->input->post('social-usr-id'),
                 'post_title' => $this->input->post('post_title'),
                 'post' => $this->input->post('post'),
                 'active' => 1,

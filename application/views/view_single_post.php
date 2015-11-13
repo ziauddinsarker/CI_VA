@@ -20,6 +20,7 @@
                 <p><?=$post['post']?></p>
                 
                 <hr>
+                <?php /*
                 <h3>Comments</h3>
     <?php       //if there is comments then print the comments
                 if(count($comments) > 0)
@@ -35,8 +36,9 @@
                     echo "<p>Currently, there are no comment.</p>";
                 }
                 
-                if($this->session->userdata('user_id'))//if user is loged in, display comment box
-                {?>
+                /*if($this->session->userdata('user_id'))//if user is loged in, display comment box
+                {*/?>
+                <?php /*
                     <form action="<?=  base_url()?>comments/add_comment/<?=$post['post_id']?>" method="post">
                         <div class="form_settings">
                             <p>
@@ -49,13 +51,17 @@
                             </p>
                         </div>
                     </form>
-               <?php 
+ */?>
+               <?php /*
                
                 }
                 else {//if no user is loged in, then show the loged in button
-                ?>
+                */
+                /*
                 <a href="<?=  base_url()?>users/login">Login to comment</a>
-        <?php    }
+                */
+                ?>
+                <?php   /* }*/
             }?>   
    	  
 				</div>

@@ -28,6 +28,7 @@ class Admin extends CI_Controller {
 		if((Hybrid_Auth::getConnectedProviders())){
 
 			$user_id = $this->session->userdata('user_id');
+
 			$this->data['singleDoctor'] = $this->doctor_model->getSingleDoctorInfo($user_id);
 			//var_dump($this->data['singleDoctor']);
 			$this->data['singlePharmacist'] = $this->pharmacist_model->getSinglePharmacistInfo($user_id);
@@ -38,8 +39,12 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/view_header');
 			$this->load->view('admin/view_admin',$this->data);
 			$this->load->view('admin/view_footer');
-		}else{
-			redirect(base_url('login'));
+
+		}elseif($this->session->userdata('user_id') && ($this->session->userdata('user_type') == "admin")){
+
+			$this->load->view('admin/view_header');
+			$this->load->view('admin/view_admin');
+			$this->load->view('admin/view_footer');
 		}
 
 	}
@@ -197,7 +202,11 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules('discount-title', 'Discount Title', 'required');
 		$this->form_validation->set_rules('discount-area', 'Discount Area', 'required');
 		$this->form_validation->set_rules('discount-on', 'Discount On', 'required');
-		$this->form_validation->set_rules('discount-duration', 'Discount duration', 'required');
+		$this->form_validation->set_rules('discount-phone', 'Discount Phone', 'required');
+		$this->form_validation->set_rules('discount-contact-time', 'Discount Contact Time', 'required');
+		$this->form_validation->set_rules('discount-email', 'Discount Email', 'required');
+		$this->form_validation->set_rules('discount-web-or-page', 'Discount Website or facebook page', 'required');
+		$this->form_validation->set_rules('discount-instruction', 'Instruction', 'required');
 		$this->form_validation->set_rules('published', 'Published or Not', 'required');
 
 		if ($this->form_validation->run() == FALSE){
@@ -222,7 +231,12 @@ class Admin extends CI_Controller {
 		$data['discount_name'] = $dt->discount_name;
 		$data['discount_area'] = $dt->discount_area;
 		$data['discount_on'] = $dt->discount_on;
+		$data['discount_phone'] = $dt->discount_phone;
+		$data['discount_contact_time'] = $dt->discount_contact_time;
+		$data['discount_email'] = $dt->discount_email;
+		$data['discount_website_or_page'] = $dt->discount_website_or_page;
 		$data['discount_duration'] = $dt->discount_duration;
+		$data['discount_instruction'] = $dt->discount_instruction;
 		$data['active_or_not'] = $dt->active;
 
 
@@ -235,7 +249,7 @@ class Admin extends CI_Controller {
 
 		if ($this->input->post('updatediscount')) {
 			$discountId = $this->input->post('discount-id');
-			$this->discount_model->updatePost($discountId);
+			$this->discount_model->updateDiscount($discountId);
 			redirect('admin/getAllDiscountOfUser');
 		} else{
 			$id = $this->input->post('discount-id');
@@ -273,12 +287,23 @@ class Admin extends CI_Controller {
 
 	public function SaveNewEvent(){
 		$this->form_validation->set_rules('social-usr-id', 'User Id', 'required');
+
 		$this->form_validation->set_rules('event-title', 'event Title', 'required');
 		$this->form_validation->set_rules('event-area', 'event Area', 'required');
+/*
+		$this->form_validation->set_rules('event-event-phone', 'event Phone', 'required');
+		$this->form_validation->set_rules('event-contact-time', 'event Contact /time', 'required');
+		$this->form_validation->set_rules('event-email', 'event Email', 'required');
+		$this->form_validation->set_rules('event-web-or-page', 'event web-or-page', '');
+
+		$this->form_validation->set_rules('event-time', 'event time', 'required');
+		$this->form_validation->set_rules('event-location', 'event location', 'required');
+
 		$this->form_validation->set_rules('event-on', 'event On', 'required');
 		$this->form_validation->set_rules('event-date', 'event duration', 'required');
-		$this->form_validation->set_rules('published', 'Published or Not', 'required');
 
+		$this->form_validation->set_rules('published', 'Published or Not', 'required');
+*/
 		if ($this->form_validation->run() == FALSE){
 			redirect('admin/addNewEvent');
 		}else{
@@ -301,6 +326,13 @@ class Admin extends CI_Controller {
 		$data['event_name'] = $dt->events_name;
 		$data['event_area'] = $dt->events_area;
 		$data['event_on'] = $dt->events_on;
+
+		$data['event_phone'] = $dt->events_phone;
+		$data['event_contact_time'] = $dt->events_contact_time;
+		$data['event_email'] = $dt->events_email;
+		$data['event_website_or_page'] = $dt->events_website_or_page;
+		$data['event_on'] = $dt->events_on;
+
 		$data['event_date'] = $dt->events_time;
 		$data['active_or_not'] = $dt->events_active;
 
@@ -313,12 +345,12 @@ class Admin extends CI_Controller {
 	function updateEvent() {
 
 		if ($this->input->post('updateevent')) {
-			$discountId = $this->input->post('discount-id');
-			$this->discount_model->updatePost($discountId);
-			redirect('admin/getAllDiscountOfUser');
+			$eventId = $this->input->post('event-id');
+			$this->events_model->updateEvent($eventId);
+			redirect('admin/getAllEventOfUser');
 		} else{
-			$id = $this->input->post('discount-id');
-			redirect('admin/editDiscount/'. $id);
+			$id = $this->input->post('event-id');
+			redirect('admin/editEvent/'. $id);
 		}
 	}
 	/*************************************************/
@@ -358,8 +390,8 @@ class Admin extends CI_Controller {
 	 */
 	function deleteEvent() {
 		$u = $this->uri->segment(3);
-		$this->discount_model->deletePost($u);
-		redirect('admin/getAllDiscountOfUser');
+		$this->events_model->deleteEvent($u);
+		redirect('admin/getAllEventOfUser');
 	}
 
 

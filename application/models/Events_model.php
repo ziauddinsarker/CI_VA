@@ -19,7 +19,7 @@ class Events_model extends CI_Model
 
     //GEta All events
     function getEvents(){
-        $this->db->select("events_id,events_name,events_time,events_date,events_address,events_phone,events_contact_time,events_email");
+        $this->db->select("events_id,events_name,events_time,events_date,events_location,events_phone,events_contact_time,events_email");
         $this->db->from('events');
         $query = $this->db->get();
         return $query->result();
@@ -42,6 +42,15 @@ class Events_model extends CI_Model
         $social_user_id = $this->input->post('social-usr-id');
         $event_title = $this->input->post('event-title');
         $event_area = $this->input->post('event-area');
+
+        $event_phone = $this->input->post('event-phone');
+        $event_contact_time = $this->input->post('event-contact-time');
+        $event_email = $this->input->post('event-email');
+        $event_web_or_page = $this->input->post('event-web-or-page');
+        $event_time = $this->input->post('event-time');
+        $event_location = $this->input->post('event-location');
+
+
         $event_on = $this->input->post('event-on');
         $event_date = $this->input->post('event-date');
         $publish = $this->input->post('published');
@@ -50,11 +59,16 @@ class Events_model extends CI_Model
             'social_user_id' => $social_user_id,
             'events_name' => $event_title,
             'events_area' => $event_area,
+            'events_phone' => $event_phone,
+            'events_contact_time' => $event_contact_time,
+            'events_email' => $event_email,
+            'events_website_or_page' => $event_web_or_page,
+            'events_time' => $event_time,
+            'events_location' => $event_location,
             'events_on' => $event_on,
             'events_date' => $event_date,
             'events_active' => $publish
         );
-
         $this->db->insert('events', $data);
     }
 
@@ -77,15 +91,32 @@ class Events_model extends CI_Model
         $event_title = $this->input->post('event-title');
         $event_area = $this->input->post('event-area');
         $event_on = $this->input->post('event-on');
-        $event_duration = $this->input->post('event-date');
+        $event_date = $this->input->post('event-date');
+        $event_phone = $this->input->post('event-phone');
+        $event_contact_time = $this->input->post('event-contact-time');
+        $event_email = $this->input->post('event-email');
+        $event_web_or_page = $this->input->post('event-web-or-page');
+        $event_time = $this->input->post('event-time');
+        $event_location = $this->input->post('event-location');
+
+
         $publish = $this->input->post('published');
 
         $data = array(
             'events_name' => $event_title,
             'events_area' => $event_area,
             'events_on' => $event_on,
-            'events_date' => $event_duration,
-            'active' => $publish
+
+            'events_phone' => $event_phone,
+            'events_contact_time' => $event_contact_time,
+            'events_email' => $event_email,
+            'events_website_or_page' => $event_web_or_page,
+            'events_time' => $event_time,
+            'events_location' => $event_location,
+            'events_date' => $event_date,
+
+
+            'events_active' => $publish
         );
         $this->db->where('events_id', $id);
         $this->db->update('events', $data);

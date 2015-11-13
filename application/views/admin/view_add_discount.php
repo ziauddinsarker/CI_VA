@@ -20,6 +20,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="discount-phone">Phone:</label>
+                            <input type="text" class="form-control" name="discount-phone" id="discount-phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discount-contact-time">Contact Time:</label>
+                            <input type="text" class="form-control" name="discount-contact-time" id="discount-contact-time">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discount-email">Email:</label>
+                            <input type="text" class="form-control" name="discount-email" id="discount-email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discount-web-or-page">Website/Page Link:</label>
+                            <input type="text" class="form-control" name="discount-web-or-page" id="discount-web-or-page">
+                        </div>
+
+                        <div class="form-group">
                             <label for="discount-on">Discount On:</label>
                             <input type="text" class="form-control" name="discount-on" id="discount-on">
                         </div>
@@ -28,6 +48,17 @@
                             <label for="discount-duration">Discount Duration:</label>
                             <input type="text" class="form-control" name="discount-duration" id="discount-duration">
                         </div>
+
+                        <div class="form-group">
+                            <label for="discount-instruction">Discount Instruction:</label>
+                            <input type="text" class="form-control" name="discount-instruction" id="discount-instruction">
+                        </div>
+
+
+
+
+
+
                         <div class="form-group">
                             <label class="radio-inline"><input type="radio" name="published" value="1">Active</label>
                             <label class="radio-inline"><input type="radio" name="published" value="0">Draft</label>

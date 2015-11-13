@@ -189,7 +189,7 @@
 					<ul>
 						<li><b>Event Date:</b> <?php echo $event->events_time;?></li>
 						<li><b>Event Time:</b> <?php echo $event->events_time;?></li>
-						<li><b>Event Location:</b> <?php echo $event->events_address;?></li>
+						<li><b>Event Location:</b> <?php echo $event->events_location;?></li>
 					</ul>
 				</div>
 			</div>

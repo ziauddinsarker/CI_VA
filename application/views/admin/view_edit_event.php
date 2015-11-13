@@ -26,6 +26,33 @@
             <label for="event-date">Event Date:</label>
             <input type="text" class="form-control" name="event-date" value="<?php echo $event_date; ?>" id="event-date">
         </div>
+
+        <div class="form-group">
+            <label for="event-phone">Phone:</label>
+            <input type="text" class="form-control" name="event-phone" value="<?php echo $event_phone; ?>" id="event-phone">
+        </div>
+
+        <div class="form-group">
+            <label for="event-contact-time">Contact Time:</label>
+            <input type="text" class="form-control" name="event-contact-time" value="<?php echo $event_contact_time; ?>" id="event-contact-time">
+        </div>
+
+        <div class="form-group">
+            <label for="event-email">Email:</label>
+            <input type="text" class="form-control" name="event-email" value="<?php echo $event_email; ?>" id="event-email">
+        </div>
+
+        <div class="form-group">
+            <label for="event-web-or-page">Website/Page Link:</label>
+            <input type="text" class="form-control" name="event-web-or-page" value="<?php echo $event_website_or_page; ?>" id="event-web-or-page">
+        </div>
+
+        <div class="form-group">
+            <label for="event-on">Event On:</label>
+            <input type="text" class="form-control" name="event-on" value="<?php echo $event_on; ?>" id="event-on">
+        </div>
+
+
         <div class="form-group">
             <label class="radio-inline"><input type="radio" name="published" value="1">Active</label>
             <label class="radio-inline"><input type="radio" name="published" value="0">Draft</label>

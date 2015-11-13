@@ -25,6 +25,7 @@
 											<label for="post_title" class="control-label">Post Title</label>
 										</div>
 										<div class="col-lg-8 col-sm-8">
+											<input type="hidden" class="form-control" name="social-usr-id" id="social-usr-id" value="<?php foreach ($sui as $so): ?><?php echo $so['social_login_id']?><?php endforeach; ?>">
 											<input id="post_title" name="post_title" placeholder="Enter Title Here" type="text" class="form-control"  value="<?php echo set_value('employeeno'); ?>" />
 											<span class="text-danger"><?php echo form_error('post_title'); ?></span>
 										</div>
@@ -37,7 +38,7 @@
 											<label for="post" class="control-label">Post Content</label>
 										</div>
 										<div class="col-lg-8 col-sm-8">
-											<textarea id="post" name="post" placeholder="Enter Content Here" type="textarea" class="form-control"  value="<?php echo set_value('employeename'); ?>">Enter text here...</textarea>
+											<textarea id="post" name="post" placeholder="Enter Content Here" type="textarea" class="form-control tinymcearea"  value="<?php echo set_value('employeename'); ?>">Enter text here...</textarea>
 											<span class="text-danger"><?php echo form_error('post'); ?></span>
 										</div>
 									</div>

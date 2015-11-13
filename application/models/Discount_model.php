@@ -27,6 +27,11 @@ class Discount_model extends CI_Model
         $discount_area = $this->input->post('discount-area');
         $discount_on = $this->input->post('discount-on');
         $discount_duration = $this->input->post('discount-duration');
+        $discount_phone = $this->input->post('discount-phone');
+        $discount_contact_time = $this->input->post('discount-contact-time');
+        $discount_email = $this->input->post('discount-email');
+        $discount_web_or_page = $this->input->post('discount-web-or-page');
+        $discount_instruction = $this->input->post('discount-instruction');
         $publish = $this->input->post('published');
 
         $data = array(
@@ -35,6 +40,11 @@ class Discount_model extends CI_Model
             'discount_area' => $discount_area,
             'discount_on' => $discount_on,
             'discount_duration' => $discount_duration,
+            'discount_phone' => $discount_phone,
+            'discount_contact_time' => $discount_contact_time,
+            'discount_email' => $discount_email,
+            'discount_website_or_page' => $discount_web_or_page,
+            'discount_instruction' => $discount_instruction,
             'active' => $publish
         );
 
@@ -55,11 +65,15 @@ class Discount_model extends CI_Model
         return $data;
     }
 
-    function updatePost($id)
+    function updateDiscount($id)
     {
         $discount_title = $this->input->post('discount-title');
         $discount_area = $this->input->post('discount-area');
         $discount_on = $this->input->post('discount-on');
+        $discount_phone = $this->input->post('discount-phone');
+        $discount_contact_time = $this->input->post('discount-contact-time');
+        $discount_email = $this->input->post('discount-email');
+        $discount_web_or_page = $this->input->post('discount-web-or-page');
         $discount_duration = $this->input->post('discount-duration');
         $publish = $this->input->post('published');
 
@@ -68,6 +82,11 @@ class Discount_model extends CI_Model
             'discount_area' => $discount_area,
             'discount_on' => $discount_on,
             'discount_duration' => $discount_duration,
+            'discount_phone' => $discount_phone,
+            'discount_contact_time' => $discount_contact_time,
+            'discount_email' => $discount_email,
+            'discount_website_or_page' => $discount_web_or_page,
+
             'active' => $publish
         );
         $this->db->where('discount_id', $id);

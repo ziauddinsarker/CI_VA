@@ -33,7 +33,7 @@ class Users extends CI_Controller
         }
         
         $this->load->view('template/view_blank_header');
-        $this->load->view('user/view_login',$data);
+        $this->load->view('admin/view_admin_login',$data);
         $this->load->view('template/view_footer');
     }
     /*********User Logout*********/

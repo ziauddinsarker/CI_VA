@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2015-11-08 23:11:56
+Date: 2015-11-13 06:52:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -12777,7 +12777,7 @@ CREATE TABLE `company_discount` (
 -- ----------------------------
 -- Records of company_discount
 -- ----------------------------
-INSERT INTO `company_discount` VALUES ('1', '325', '6');
+INSERT INTO `company_discount` VALUES ('1', '330', '6');
 
 -- ----------------------------
 -- Table structure for contact
@@ -12840,15 +12840,12 @@ CREATE TABLE `discount` (
   `discount_instruction` varchar(255) DEFAULT NULL,
   `social_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`discount_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=331 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of discount
 -- ----------------------------
-INSERT INTO `discount` VALUES ('1', 'Discount One ', 'Dhaka', 'Nothing', '2015-07-21 06:05:02', '2015-07-22 06:12:19', null, null, null, null, '2005', null, null, '12');
-INSERT INTO `discount` VALUES ('325', 'Discount Two', null, null, '2015-07-13 06:09:58', '2015-08-27 06:12:22', null, null, null, null, null, null, null, '12');
-INSERT INTO `discount` VALUES ('326', 'No discount found for discount one', 'Comilla', 'Medicine', '2015-07-28 06:10:01', '2015-07-27 06:12:26', null, null, null, null, '10day', null, null, '12');
-INSERT INTO `discount` VALUES ('329', 'Discount count on e', 'Pharamacist', 'Nothing ', null, null, null, null, null, null, '256sf65sd6f', '1', null, '12');
+INSERT INTO `discount` VALUES ('330', '1', '2', '8', '2015-11-02 23:11:29', '2015-11-04 23:11:33', '4', '0000-00-00 00:00:00', '6', '7', '9', null, 'This is nothing to say', '1');
 
 -- ----------------------------
 -- Table structure for district
@@ -12973,12 +12970,12 @@ CREATE TABLE `doctors` (
   KEY `fk_doctor_district` (`doctor_district`),
   CONSTRAINT `fk_doctor_category` FOREIGN KEY (`doctor_category`) REFERENCES `doctors_category` (`doctor_category_id`),
   CONSTRAINT `fk_doctor_district` FOREIGN KEY (`doctor_district`) REFERENCES `district` (`district_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of doctors
 -- ----------------------------
-INSERT INTO `doctors` VALUES ('18', 'Ziauddin Sarker', 'MBBS', null, 'GKJSD', null, null, null, null, '5', '17');
+INSERT INTO `doctors` VALUES ('1', 'Ziauddin Sarker', '', null, '', null, null, null, null, '5', '17');
 
 -- ----------------------------
 -- Table structure for doctors_category
@@ -13066,12 +13063,13 @@ CREATE TABLE `doctors_chamber` (
   PRIMARY KEY (`doctors_chambers_id`),
   KEY `fk_doctor_address` (`doctors_chambers_address`),
   CONSTRAINT `fk_doctor_address` FOREIGN KEY (`doctors_chambers_address`) REFERENCES `doctors_chamber_address` (`doctors_chamber_address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of doctors_chamber
 -- ----------------------------
 INSERT INTO `doctors_chamber` VALUES ('3', '3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `doctors_chamber` VALUES ('4', '4', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for doctors_chamber_address
@@ -13082,12 +13080,13 @@ CREATE TABLE `doctors_chamber_address` (
   `doctors_chamber_address_1` varchar(255) DEFAULT NULL,
   `doctors_chamber_address_2` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`doctors_chamber_address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of doctors_chamber_address
 -- ----------------------------
 INSERT INTO `doctors_chamber_address` VALUES ('3', null, null);
+INSERT INTO `doctors_chamber_address` VALUES ('4', null, null);
 
 -- ----------------------------
 -- Table structure for doctor_all_info
@@ -13102,12 +13101,12 @@ CREATE TABLE `doctor_all_info` (
   KEY `fk_doctor_info_doctor` (`doctor_info_doctor`),
   CONSTRAINT `fk_doctor_info_chamber` FOREIGN KEY (`doctor_info_chamber`) REFERENCES `doctors_chamber` (`doctors_chambers_id`),
   CONSTRAINT `fk_doctor_info_doctor` FOREIGN KEY (`doctor_info_doctor`) REFERENCES `doctors` (`doctor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of doctor_all_info
 -- ----------------------------
-INSERT INTO `doctor_all_info` VALUES ('4', '18', '3');
+INSERT INTO `doctor_all_info` VALUES ('1', '1', '4');
 
 -- ----------------------------
 -- Table structure for doctor_rating
@@ -13122,7 +13121,7 @@ CREATE TABLE `doctor_rating` (
   KEY `fk_rating_id` (`rating_id`),
   CONSTRAINT `fk_doctor_rating` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`doctor_id`),
   CONSTRAINT `fk_rating_id` FOREIGN KEY (`rating_id`) REFERENCES `rating` (`rating_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of doctor_rating
@@ -13139,22 +13138,20 @@ CREATE TABLE `events` (
   `events_on` varchar(255) DEFAULT NULL,
   `events_time` time DEFAULT NULL,
   `events_date` date DEFAULT NULL,
-  `events_address` varchar(255) DEFAULT NULL,
+  `events_location` varchar(255) DEFAULT NULL,
   `events_phone` varchar(255) DEFAULT NULL,
   `events_contact_time` varchar(255) DEFAULT NULL,
   `events_email` varchar(255) DEFAULT NULL,
+  `events_website_or_page` varchar(255) DEFAULT NULL,
   `events_active` tinyint(1) DEFAULT NULL,
   `social_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`events_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of events
 -- ----------------------------
-INSERT INTO `events` VALUES ('1', 'Nothing Events', null, null, '00:00:00', '2015-11-06', '258 Nabinbagh, Khilgaon , Dhaka', '01720223388', '12:90', 'ziauddin.sarker@gmail.com', null, '12');
-INSERT INTO `events` VALUES ('2', 'Another Nothing Events', null, null, '00:00:00', null, 'Khilgaon Badda Kustia', '7211434', '3:20', 'info@simkam.com', null, '12');
-INSERT INTO `events` VALUES ('3', 'New q', 'sdlfkjsdalkf', 'aslkfj', null, '2015-11-06', null, null, null, null, '1', '12');
-INSERT INTO `events` VALUES ('4', 'sdfasd', 'asdfasd', 'asdfa', null, '0000-00-00', null, null, null, null, '1', '12');
+INSERT INTO `events` VALUES ('7', 'asdf', 'sadf', 'asdf', null, '0000-00-00', null, '01720223388', 'sadf', 'ziauddin_sarker@live.com', 'asadf', null, '1');
 
 -- ----------------------------
 -- Table structure for fan
@@ -13183,12 +13180,13 @@ CREATE TABLE `health_business` (
   `health_business_experties` varchar(255) DEFAULT NULL,
   `health_business_facebook_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`health_business_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of health_business
 -- ----------------------------
 INSERT INTO `health_business` VALUES ('3', 'Ziauddin Sarker', 'ziauddin.sarker@gmail.com', 'Business', 'http://www.facebook.com');
+INSERT INTO `health_business` VALUES ('4', 'Ziauddin Sarker', null, 'Business', 'http://www.facebook.com');
 
 -- ----------------------------
 -- Table structure for login_users
@@ -13227,11 +13225,12 @@ CREATE TABLE `pharmacist` (
   `pharmacist_gender` varchar(255) DEFAULT NULL,
   `pharmacist_reg_no` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pharmacist_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of pharmacist
 -- ----------------------------
+INSERT INTO `pharmacist` VALUES ('1', 'Ziauddin Sarker', null, 'BDS', null, null, null, null, '01245sf');
 
 -- ----------------------------
 -- Table structure for posts
@@ -13245,23 +13244,12 @@ CREATE TABLE `posts` (
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `social_user_id` int(11) NOT NULL,
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES ('11', 'What we’re reading today', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '12');
-INSERT INTO `posts` VALUES ('13', 'My Cujo', '\r\nOn the days that I have to leave early to work, I get very stressed out. But not for the reasons you might imagine. Every day, at around 6 a.m. there’s this tiny wisp of a girl that walks dogs in my neighborhood. Correction: it’s the dogs that walk her around. Her smallest canine friend looks bigger than she does — and there…', '1', '2015-08-08 14:00:33', '1');
-INSERT INTO `posts` VALUES ('15', 'The new blog', 'Enter text here...sdalfjdlfjsdlkjflsdjfl', '1', '2015-08-18 07:19:09', '1');
-INSERT INTO `posts` VALUES ('16', 'What next', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '1');
-INSERT INTO `posts` VALUES ('17', 'New post 3', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '1');
-INSERT INTO `posts` VALUES ('18', 'What we’re reading today', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '1');
-INSERT INTO `posts` VALUES ('19', 'This is a good day', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '12');
-INSERT INTO `posts` VALUES ('20', 'What we’re reading today', 'As has become a Friday tradition, here are five education stories to “brighten” your day. If the spirit moves you, please read, recommend, share, and respond on Medium! Also, I’m looking to commission some new stories. If you’re interested in contributing, reach out to me on Twitter (@sarika008) and I’ll DM you my email address.', '1', '2015-08-08 11:18:41', '1');
-INSERT INTO `posts` VALUES ('25', 'sf', 'sdf', '1', '2015-11-03 00:17:22', '0');
-INSERT INTO `posts` VALUES ('26', 'sdfsa', 'sdfas', '1', '2015-11-03 00:18:11', '0');
-INSERT INTO `posts` VALUES ('27', 'sdfsdfsdasdf', 'sdfaasdf', '1', '2015-11-03 00:28:19', '0');
-INSERT INTO `posts` VALUES ('28', 'This is first Blog', 'This is my first blog', '1', '2015-11-08 22:07:31', '13');
+INSERT INTO `posts` VALUES ('32', 'asdfsdafasdf', '<p>sdfdsafasdf</p>', '1', '2015-11-12 22:33:36', '1');
 
 -- ----------------------------
 -- Table structure for rating
@@ -13320,11 +13308,12 @@ CREATE TABLE `social_users` (
   `hybridauth_provider_uid` varchar(255) NOT NULL COMMENT 'Provider user ID',
   PRIMARY KEY (`social_login_id`),
   UNIQUE KEY `hybridauth_idx` (`hybridauth_provider_name`,`hybridauth_provider_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of social_users
 -- ----------------------------
+INSERT INTO `social_users` VALUES ('2', 'Ziauddin Sarker', null, 'pharmacist', 'Facebook', '10206570451232849');
 
 -- ----------------------------
 -- Table structure for thana
@@ -13861,21 +13850,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'al.imran.cse', 'al_imran_ahmed', '6f4a9c7287503510eb9ab662ed116c0272bf4ae1', 'admin');
-INSERT INTO `users` VALUES ('2', 'al_imranahmed@yahoo.com', 'user', '12dea96fec20593566ab75692c9949596833adc9', 'doctor');
-INSERT INTO `users` VALUES ('3', 'author@gmail.com', 'author', 'f64cd8e32f5ac7553c150bd05d6f2252bb73f68d', 'admin');
-INSERT INTO `users` VALUES ('4', 'admin@gmail.com', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'doctor');
-INSERT INTO `users` VALUES ('5', 'chand@gmail.com', 'chand', '6f4a9c7287503510eb9ab662ed116c0272bf4ae1', 'admin');
 INSERT INTO `users` VALUES ('6', 'ziauddin.sarker@gmail.com', 'ziauddin', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'admin');
-INSERT INTO `users` VALUES ('7', 'ziauddin_sarker@live.com', 'bdzia', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('9', 'sfsadf@fgnauk.com', 'names', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('10', 'xsdf@gmail.com', 'google', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('11', 'sfsadf@fgnauk.com', 'names', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('12', 'sfsadf@fgnauk.com', 'bdziai', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('13', 'ziaudd@gmail.com', 'jkjfkdj', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('14', 'sfsadf@fgnauk.com', 'sdfsdf', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('15', 'sfsadf@fgnauk.com', 'sdfsdf', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
-INSERT INTO `users` VALUES ('16', 'sfsadf@fgnauk.com', 'usern', '8235bc2ef1ad8fd830046290b062cfb4fb7bc3a8', 'doctor');
 
 -- ----------------------------
 -- Table structure for user_doc
@@ -13890,7 +13865,7 @@ CREATE TABLE `user_doc` (
   KEY `fk_soc_login_doctor` (`doctor_id`),
   CONSTRAINT `fk_soc_login_doctor` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`doctor_id`),
   CONSTRAINT `fk_soc_login_user` FOREIGN KEY (`user_id`) REFERENCES `social_users` (`social_login_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_doc
@@ -13909,7 +13884,7 @@ CREATE TABLE `user_fan` (
   KEY `fk_soc_login_doctor` (`fan_id`),
   CONSTRAINT `fk_fan_user_id` FOREIGN KEY (`user_id`) REFERENCES `social_users` (`social_login_id`),
   CONSTRAINT `fk_user_fan_id` FOREIGN KEY (`fan_id`) REFERENCES `fan` (`fan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_fan
@@ -13928,7 +13903,7 @@ CREATE TABLE `user_health_business` (
   KEY `fk_soc_login_doctor` (`health_business_id`),
   CONSTRAINT `fk_user_health_business_id` FOREIGN KEY (`health_business_id`) REFERENCES `health_business` (`health_business_id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `social_users` (`social_login_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_health_business
@@ -13947,8 +13922,9 @@ CREATE TABLE `user_pharma` (
   KEY `fk_soc_login_doctor` (`pharmacist_id`),
   CONSTRAINT `fk_user_pharma_id` FOREIGN KEY (`pharmacist_id`) REFERENCES `pharmacist` (`pharmacist_id`),
   CONSTRAINT `fk_user_social_id` FOREIGN KEY (`user_id`) REFERENCES `social_users` (`social_login_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_pharma
 -- ----------------------------
+INSERT INTO `user_pharma` VALUES ('1', '2', '1');
