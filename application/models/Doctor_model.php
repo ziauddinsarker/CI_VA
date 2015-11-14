@@ -167,9 +167,10 @@ class Doctor_model extends CI_Model
 	public function getDoctorsInformation(){
 	  $this->db->select('*');
 	  $this->db->from('doctors');
-	  $this->db->join('doctors_category', 'doctors.doctor_specialist = doctors_category.doctor_category_id');	  
-	  $this->db->join('doctors_chamber', 'doctors.doctor_chamber = doctors_chamber.doctors_chambers_id');	  
-	  $this->db->join('doctors_chamber_address', 'doctors_chamber.doctors_chambers_address = doctors_chamber_address.doctors_chamber_address_id');	  
+	  $this->db->join('doctors_category', 'doctors.doctor_category = doctors_category.doctor_category_id');
+	  $this->db->join('doctor_all_info', 'doctor_all_info.doctor_info_doctor = doctors.doctor_id');
+	  $this->db->join('doctors_chamber', 'doctor_all_info.doctor_info_chamber = doctors_chamber.doctors_chambers_id');
+	  $this->db->join('doctors_chamber_address', 'doctors_chamber.doctors_chambers_address = doctors_chamber_address.doctors_chamber_address_id');
 	  $query = $this->db->get();
 	  return $query->result();
 		

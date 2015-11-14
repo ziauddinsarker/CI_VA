@@ -98,5 +98,12 @@ class Discount_model extends CI_Model
         $this->db->delete('discount', array('discount_id' => $discount_id));
         return;
     }
+
+    function getDiscountInformation(){
+        $this->db->select();
+        $this->db->from('discount');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 }
-?>

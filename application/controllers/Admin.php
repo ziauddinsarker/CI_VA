@@ -5,8 +5,9 @@ class Admin extends CI_Controller {
 	
 	public function __construct()
     {
-        parent::__construct();      
-		
+        parent::__construct();
+		$this->load->library('pagination');
+
 		$this->load->database(); // load database	
 		$this->load->model('brand_model');
 		$this->load->model('shop_model');
@@ -21,6 +22,8 @@ class Admin extends CI_Controller {
 		$this->load->model('events_model');
 		$this->load->model('profile_model');
 		$this->load->library('HybridAuthLib');
+
+
     }
 
 	public function index()
@@ -41,22 +44,59 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/view_footer');
 
 		}elseif($this->session->userdata('user_id') && ($this->session->userdata('user_type') == "admin")){
-
 			$this->load->view('admin/view_header');
 			$this->load->view('admin/view_admin');
 			$this->load->view('admin/view_footer');
 		}
 
 	}
-	
-	public function medicine()
-	{ 		
-		$data['medicines'] = $this->brand_model->get_shop_based_on_thana_and_brand();
+
+
+
+
+
+
+	public function medicine($offset = 0)
+	{
+		// Config setup
+		$config['base_url'] = base_url().'/admin/medicine/';
+		$config['total_rows']= $this->db->count_all('brand');
+		$config['per_page'] = 50;
+		// I added this extra one to control the number of links to show up at each page.
+		$config['num_links'] = 10;
+
+		/******************************/
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = false;
+		$config['last_link'] = false;
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tag_close'] = '</li>';
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+
+		/******************************/
+		// Initialize
+		$this->pagination->initialize($config);
+		// Query the database and get results
+		//$data['books'] = $this->db->get('books');
+
+		$data['medicines'] = $this->brand_model->getBrands(10,$offset);
+		//var_dump($data['medicines']);
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_medicine',$data);
         $this->load->view('admin/view_footer');
 		//echo json_encode($data);
-		
 	}
 	
 	public function shop()
@@ -65,7 +105,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_shop', $data);
         $this->load->view('admin/view_footer');
-		
 	}
 	
 	public function doctor()
@@ -74,7 +113,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_doctor',$data);
         $this->load->view('admin/view_footer');
-		
 	}
 
 	/**
@@ -86,8 +124,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_user',$data);
         $this->load->view('admin/view_footer');
-		
 	}
+
+
+
 	/************************************************/
 	/*****************Blog***********************/
 	/************************************************/
@@ -135,7 +175,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/view_header');
        	$this->load->view('admin/view_blog',$data);
         $this->load->view('admin/view_footer');
-		
+	}
+
+	public function all_blog(){
+		$data['blogs'] = $this->blog_model->getAllPosts();
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_blog_admin',$data);
+		$this->load->view('admin/view_footer');
 	}
 
 	public function editPost(){
@@ -380,11 +426,6 @@ class Admin extends CI_Controller {
 			redirect('admin');
 		}
 	}
-
-
-
-
-
 	/**
 	 *
 	 */
@@ -429,5 +470,22 @@ class Admin extends CI_Controller {
 		//echo json_encode($data['profiles']);
 	}
 
-	
+
+	function discount(){
+		$data['discounts'] = $this->discount_model->getDiscountInformation();
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_discount_admin',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+	function event(){
+		$data['events'] = $this->events_model->getEventInformation();
+		$this->load->view('admin/view_header');
+		$this->load->view('admin/view_event_admin',$data);
+		$this->load->view('admin/view_footer');
+	}
+
+
+
 }
+

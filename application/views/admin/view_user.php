@@ -11,17 +11,24 @@
 					
 				<table class="table table-striped table-bordered table-hover" id="dataTables-example"><thead>
 				<tr>			
-					<th>User Name</th>
-					<th>User Email</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>type</th>
+					<th>provider</th>
+					<th>provider ID</th>
+					<th>Active</th>
 					<th>Update/Delete</th>
 				 </tr> 
 				</thead>
 				<tbody>		
 				<?php foreach($users as $user){?>
 					<tr class="odd gradeX">					
-						<td><?php echo $user->username;?></td>
-						<td><?php echo $user->email;?></td>
-											
+						<td><?php echo $user->social_login_user;?></td>
+						<td><?php echo $user->social_login_email;?></td>
+						<td><?php echo $user->social_login_user_type;?></td>
+						<td><?php echo $user->hybridauth_provider_name;?></td>
+						<td><?php echo $user->hybridauth_provider_uid;?></td>
+						<td><?php echo $user->published;?></td>
 						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
 					</tr>
 				<?php }?> 

@@ -35,7 +35,7 @@ class Blog_model extends CI_Model
     }
 
 	function getAllPosts(){
-		$this->db->select();
+		$this->db->select('*');
         $this->db->from('posts');
 		$query = $this->db->get();
         return $query->result();

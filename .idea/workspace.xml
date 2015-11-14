@@ -2,27 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dca0c5f-f5b7-425a-8890-a0a1cf6a4759" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/view_blog_admin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/view_discount_admin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/view_event_admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Blog_model.php" afterPath="$PROJECT_DIR$/application/models/Blog_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Brand_model.php" afterPath="$PROJECT_DIR$/application/models/Brand_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Discount_model.php" afterPath="$PROJECT_DIR$/application/models/Discount_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Doctor_model.php" afterPath="$PROJECT_DIR$/application/models/Doctor_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Events_model.php" afterPath="$PROJECT_DIR$/application/models/Events_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php" afterPath="$PROJECT_DIR$/application/controllers/Home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Users.php" afterPath="$PROJECT_DIR$/application/controllers/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bhaloachee.sql" afterPath="$PROJECT_DIR$/bhaloachee.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User_model.php" afterPath="$PROJECT_DIR$/application/models/User_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/logs/hybridauth.log" afterPath="$PROJECT_DIR$/application/logs/hybridauth.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/main.js" afterPath="$PROJECT_DIR$/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_add_blog.php" afterPath="$PROJECT_DIR$/application/views/admin/view_add_blog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_add_discount.php" afterPath="$PROJECT_DIR$/application/views/admin/view_add_discount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_add_event.php" afterPath="$PROJECT_DIR$/application/views/admin/view_add_event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_edit_discount.php" afterPath="$PROJECT_DIR$/application/views/admin/view_edit_discount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_edit_event.php" afterPath="$PROJECT_DIR$/application/views/admin/view_edit_event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/template/view_events.php" afterPath="$PROJECT_DIR$/application/views/template/view_events.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_footer.php" afterPath="$PROJECT_DIR$/application/views/admin/view_footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_admin.php" afterPath="$PROJECT_DIR$/application/views/admin/view_admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_header.php" afterPath="$PROJECT_DIR$/application/views/admin/view_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/template/view_header.php" afterPath="$PROJECT_DIR$/application/views/template/view_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/healthcare/view_healthcare.php" afterPath="$PROJECT_DIR$/application/views/healthcare/view_healthcare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/template/view_review_news.php" afterPath="$PROJECT_DIR$/application/views/template/view_review_news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_single_post.php" afterPath="$PROJECT_DIR$/application/views/view_single_post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_medicine.php" afterPath="$PROJECT_DIR$/application/views/admin/view_medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_user.php" afterPath="$PROJECT_DIR$/application/views/admin/view_user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CI_VA.iws" />
@@ -44,78 +38,7 @@
     <favorites_list name="CI_VA" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67346936">
-              <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/view_header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="41.870968">
-              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4">
-              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_healthcare.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/healthcare/view_healthcare.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Admins.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Admins.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.935484">
-              <caret line="14" column="49" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_admin_login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin_login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.064516">
-              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.193548">
-              <caret line="29" column="55" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,11 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/hybridauthlib.php" />
-        <option value="$PROJECT_DIR$/assets/js/scripts.js" />
-        <option value="$PROJECT_DIR$/application/models/Login_model.php" />
-        <option value="$PROJECT_DIR$/application/views/template/view_healthcare.php" />
-        <option value="$PROJECT_DIR$/application/models/Healthcare_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Search.php" />
         <option value="$PROJECT_DIR$/application/views/user/signup.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
@@ -136,8 +54,6 @@
         <option value="$PROJECT_DIR$/application/models/Location_model.php" />
         <option value="$PROJECT_DIR$/application/views/template/view_brand.php" />
         <option value="$PROJECT_DIR$/application/views/template/view_footer.php" />
-        <option value="$PROJECT_DIR$/application/models/User_model.php" />
-        <option value="$PROJECT_DIR$/application/models/Blog_model.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_blog.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_discount.php" />
         <option value="$PROJECT_DIR$/application/models/Home_model.php" />
@@ -153,26 +69,33 @@
         <option value="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_user_profile.php" />
         <option value="$PROJECT_DIR$/application/models/Pharmacist_model.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/view_admin.php" />
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_add_blog.php" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/application/views/admin/view_header.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_footer.php" />
         <option value="$PROJECT_DIR$/application/views/template/view_header.php" />
         <option value="$PROJECT_DIR$/application/views/view_single_post.php" />
         <option value="$PROJECT_DIR$/application/views/template/view_review_news.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_add_discount.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_edit_discount.php" />
-        <option value="$PROJECT_DIR$/application/models/Discount_model.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_add_event.php" />
         <option value="$PROJECT_DIR$/application/views/template/view_events.php" />
         <option value="$PROJECT_DIR$/application/views/admin/view_edit_event.php" />
-        <option value="$PROJECT_DIR$/application/models/Events_model.php" />
-        <option value="$PROJECT_DIR$/application/models/Doctor_model.php" />
         <option value="$PROJECT_DIR$/application/views/healthcare/view_healthcare.php" />
         <option value="$PROJECT_DIR$/application/controllers/Users.php" />
         <option value="$PROJECT_DIR$/application/controllers/Home.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_admin.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_user.php" />
+        <option value="$PROJECT_DIR$/application/models/User_model.php" />
+        <option value="$PROJECT_DIR$/application/models/Doctor_model.php" />
+        <option value="$PROJECT_DIR$/application/models/Blog_model.php" />
+        <option value="$PROJECT_DIR$/application/models/Discount_model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_discount_admin.php" />
+        <option value="$PROJECT_DIR$/application/models/Events_model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_event_admin.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_medicine.php" />
+        <option value="$PROJECT_DIR$/application/models/Brand_model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/view_header.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
       </list>
     </option>
@@ -481,9 +404,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22707736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19627507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12600537" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -521,48 +444,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/hybridauthlib.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.903226">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9650145">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Profile_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="87" selection-start-line="60" selection-start-column="87" selection-end-line="60" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/template/view_blank_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.483871">
@@ -602,13 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.206897">
           <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Blog_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.354838">
-          <caret line="16" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -661,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.548387">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Home_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.774194">
@@ -693,7 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.709677">
           <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,13 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5161295">
           <caret line="12" column="205" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="205" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.096774">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -732,18 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_discount.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.096775">
-          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/view_edit_discount.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5131195">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.354838">
           <caret line="44" column="30" selection-start-line="21" selection-start-column="24" selection-end-line="44" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-135.54839">
           <caret line="191" column="80" selection-start-line="191" selection-start-column="80" selection-end-line="191" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,23 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.451612">
           <caret line="51" column="92" selection-start-line="51" selection-start-column="92" selection-end-line="51" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Discount_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.612904">
-          <caret line="95" column="2" selection-start-line="95" selection-start-column="2" selection-end-line="99" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Events_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.55">
-          <caret line="124" column="24" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.677419">
           <caret line="8" column="111" selection-start-line="8" selection-start-column="111" selection-end-line="8" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,17 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.677419">
           <caret line="727" column="62" selection-start-line="727" selection-start-column="52" selection-end-line="727" selection-end-column="62" />
-          <folding>
-            <marker date="1446306447722" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Doctor_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2166667">
-          <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67346936">
           <caret line="21" column="53" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,23 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32069972">
           <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="41.870968">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,30 +672,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.935484">
           <caret line="14" column="49" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.193548">
-          <caret line="29" column="55" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="55" />
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.096774">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.387097">
+          <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/User_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.092063494">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5772595">
+          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Blog_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Doctor_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="167" column="25" selection-start-line="167" selection-start-column="25" selection-end-line="167" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Events_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="31" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_discount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Discount_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="106" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_event_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.612904">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_discount_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Brand_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_medicine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="68" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/view_blog_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67346936">
-          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="152" column="34" selection-start-line="152" selection-start-column="34" selection-end-line="152" selection-end-column="34" />
           <folding />
         </state>
       </provider>

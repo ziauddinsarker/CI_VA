@@ -12,7 +12,6 @@
 			<table class="table table-striped table-bordered table-hover" id="dataTables-example"><thead>
 				<tr>
 					<th>Brand Name</th>
-					<!-- <th>Generic Name</th> -->
 					<th>Company</th>
 					<th>Form</th>
 					<th>Strength</th>
@@ -26,7 +25,6 @@
 					
 						<tr class="odd gradeX">
 						<td><?php echo $medicine->brand_name; ?></td>
-						<td><?php //echo $medicine->brand_generic_name; ?></td>
 						<td><?php echo $medicine->manufacturer_name; ?></td>
 						<td><?php echo $medicine->brand_dosage_form_name; ?></td>
 						<td><?php echo $medicine->brand_strength_name; ?></td>
@@ -37,7 +35,7 @@
 				 <?php }?>  
 				</tbody>
 			</table>
-			
+					<?php echo $this->pagination->create_links(); ?>
 				<p><a href="medicine_new">Add a new Medicine</a></p>
                     
                     <!-- /.panel -->

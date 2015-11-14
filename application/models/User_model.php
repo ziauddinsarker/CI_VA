@@ -25,13 +25,28 @@ class User_model extends CI_Model
 
 	}
 
-
+	/*****************************************************/
 	function get_all_users(){		
-	  $this->db->select('username,email');
-	  $this->db->from('users');	  	  
+	  $this->db->select('social_login_user,social_login_email,social_login_user_type,published,hybridauth_provider_name,hybridauth_provider_uid');
+	  $this->db->from('social_users');
 	  $query = $this->db->get();
 	  return $query->result();
 	}
+
+	function edit_single_user(){
+	  $this->db->select('social_login_user,social_login_email,social_login_user_type,published,hybridauth_provider_name,hybridauth_provider_uid');
+	  $this->db->from('social_users');
+	  $query = $this->db->get();
+	  return $query->result();
+	}
+
+	function delete_single_user(){
+	  $this->db->select('social_login_user,social_login_email,social_login_user_type,published,hybridauth_provider_name,hybridauth_provider_uid');
+	  $this->db->from('social_users');
+	  $query = $this->db->get();
+	  return $query->result();
+	}
+	/*****************************************************/
 	
 	
 	
