@@ -22,6 +22,8 @@ class Brand_model extends CI_Model
 	  return $query->result();
 		
 	}
+
+
 	/*
 	public function getBrands(){
 	  $this->db->select('*');
@@ -36,7 +38,7 @@ class Brand_model extends CI_Model
 	}
 	*/
 	public function getBrands($offset, $limit){
-	  $this->db->select('brand.brand_name, brand_dosage_form_name,brand_dosage_amount.brand_dosage_amount,manufacturer_name,brand_strength_name,brand_strength_from_price.brand_quantity,brand_strength_from_price.brand_price');
+	  $this->db->select('brand.brand_id,brand.brand_name, brand_dosage_form_name,brand_dosage_amount.brand_dosage_amount,manufacturer_name,brand_strength_name,brand_strength_from_price.brand_quantity,brand_strength_from_price.brand_price');
 	  $this->db->from('brand');
 	  $this->db->join('brand_strength_from_price', 'brand_strength_from_price.brand_name = brand.brand_id');
 	  $this->db->join('brand_dosage_form', 'brand_strength_from_price.brand_dosage_form = brand_dosage_form.brand_dosage_form_id');
@@ -46,6 +48,32 @@ class Brand_model extends CI_Model
 	  $this->db->limit($offset, $limit);
 	  $query = $this->db->get();
 	  return $query->result();
+	}
+
+	/*function edit_woven_costing($brand_id) {
+		$this->db->select('*');
+		$this->db->join('brand', 'brand_strength_from_price.brand_name = brand.brand_id');
+		$this->db->join('brand_strength_from_price', 'brand_strength_from_price.brand_name = brand.brand_id');
+		$this->db->join('brand_dosage_form', 'brand_strength_from_price.brand_dosage_form = brand_dosage_form.brand_dosage_form_id');
+		$this->db->join('brand_dosage_amount', 'brand_strength_from_price.brand_dosage_amount = brand_dosage_amount.brand_dosage_amount_id');
+		$this->db->join('brand_manufacturer', 'brand.brand_manufacturer = brand_manufacturer.manufacturer_name');
+		$this->db->join('brand_strength', 'brand_strength_from_price.brand_strength = brand_strength.brand_strength_id');
+		$data = $this->db->get_where('brand_strength_from_price', array('brand_id' => $brand_id))->row();
+		return $data;
+	}	*/
+
+	function edit_brand($brand_id) {
+		$this->db->select('*');
+		//$this->db->from('brand_strength_from_price');
+		$this->db->join('brand', 'brand_strength_from_price.brand_name = brand.brand_id');
+		$this->db->join('brand_dosage_form', 'brand_strength_from_price.brand_dosage_form = brand_dosage_form.brand_dosage_form_id');
+		$this->db->join('brand_manufacturer', 'brand.brand_manufacturer = brand_manufacturer.manufacturer_name');
+		$this->db->join('brand_strength', 'brand_strength_from_price.brand_strength = brand_strength.brand_strength_id');
+		$this->db->join('brand_dosage_amount', 'brand_strength_from_price.brand_dosage_amount = brand_dosage_amount.brand_dosage_amount_id');
+		//$query = $this->db->get();
+		//return $query->result();
+		$data = $this->db->get_where('brand_strength_from_price', array('brand_id' => $brand_id))->row();
+		return $data;
 	}
 	
 	public function get_shop_based_on_thana_and_brand(){

@@ -26,9 +26,10 @@
 
                                         <div class="col-md-8 right">
                                             <nav>
-                                                <a id="single-fb" href="https://www.facebook.com/sharer/sharer.php?u=<?=  base_url()?>pharmacist/single/<?= $pharmacist['pharmacist_id']?>">fb</a>
-                                                <a id="single-fb" href="#">tw</a>
-                                                <a id="single-fb" href="#">g+</a>
+                                                <a id="single-fb" href="https://www.facebook.com/sharer/sharer.php?u=<?=  base_url()?>pharmacist/single/<?= $pharmacist['pharmacist_id']?>" target="_blank">fb</a>
+                                                <a id="single-fb" href="https://twitter.com/intent/tweet?text=<?=$pharmacist['pharmacist_name']?>%20-%20<?=  base_url()?>pharmacist/single/<?= $pharmacist['pharmacist_id']?>" target="_blank">tw</a>
+                                                <a id="single-fb" href="https://plus.google.com/share?url=<?=  base_url()?>pharmacist/single/<?= $pharmacist['pharmacist_id']?>?utm_medium=google_plus&utm_source=socialnetwork" target="_blank">g+</a>
+
                                         </div>
                                     </div>
 

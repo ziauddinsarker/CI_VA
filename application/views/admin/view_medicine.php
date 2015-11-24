@@ -30,7 +30,8 @@
 						<td><?php echo $medicine->brand_strength_name; ?></td>
 						<td><?php echo $medicine->brand_quantity; ?></td>
 						<td><?php echo $medicine->brand_price;?></td>
-						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+						<!-- <td><a href="#">Edit</a> | <a href="#">Delete</a></td>-->
+						<td><a class='btn btn-default btn-info' href="<?=  base_url()?>brand/edit_brand/<?php echo $medicine->brand_id; ?>">Edit</a> <a class='btn btn-default btn-info' href="#">Delete</a> </td>
 						</tr>
 				 <?php }?>  
 				</tbody>
