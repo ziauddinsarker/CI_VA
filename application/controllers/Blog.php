@@ -12,13 +12,13 @@ class Blog extends CI_Controller {
 
     function index($start = 0)//index page
     {
-        $data['posts'] = $this->blog_model->get_posts(5, $start);
+        $data['posts'] = $this->blog_model->get_posts(1, $start);
         
         //pagination
         $this->load->library('pagination');
         $config['base_url'] = base_url().'blog/index/';//url to set pagination
         $config['total_rows'] = $this->blog_model->get_post_count();
-        $config['per_page'] = 5; 
+        $config['per_page'] = 1; 
         $this->pagination->initialize($config); 
         $data['pages'] = $this->pagination->create_links(); //Links of pages
         
